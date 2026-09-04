@@ -1,26 +1,232 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #1E3420;
+  --color-primary-light: #243A22;
+  --color-primary-dark: #1B301F;
+  --color-secondary: #577831;
+  --color-secondary-dark: #456628;
+  --color-accent: #DDEA81;
+  --color-accent-warm: #F8EB8C;
+  --color-tertiary: #F7AF36;
+  --color-tertiary-dark: #e59a1f;
+  --color-earth: #50371A;
+  --color-neutral: #F4F0E8;
+  --color-neutral-dark: #e8e2d6;
+  --color-surface: #1B301F;
+  --color-surface-light: #243A22;
+  --color-surface-lighter: #2D4625;
+
+  --font-headline: "Playfair Display", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-neutral);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-light);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(36, 58, 34, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(87, 120, 49, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(27, 48, 31, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(87, 120, 49, 0.08);
+  }
+
+  .overlay-dark {
+    background: linear-gradient(
+      180deg,
+      rgba(27, 48, 31, 0.3) 0%,
+      rgba(27, 48, 31, 0.7) 50%,
+      rgba(27, 48, 31, 0.95) 100%
+    );
+  }
+
+  .section-padding {
+    padding: 4rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 6rem 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding: 8rem 4rem;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out forwards;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.globe-marker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #DDEA81;
+  box-shadow: 0 0 8px 2px rgba(221, 234, 129, 0.4);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.globe-marker-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(221, 234, 129, 0.2);
+  animation: marker-pulse 2.5s ease-in-out infinite;
+}
+
+.globe-marker-dot.active {
+  width: 12px;
+  height: 12px;
+  background: #F7AF36;
+  box-shadow: 0 0 12px 4px rgba(247, 175, 54, 0.5);
+}
+
+.globe-marker-label {
+  pointer-events: none;
+  z-index: 100;
+}
+
+.globe-marker-label div {
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+@keyframes marker-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.5);
+  }
+}
+
+.scene > canvas {
+  outline: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
