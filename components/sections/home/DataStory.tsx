@@ -130,7 +130,7 @@ export default function DataStory() {
         <AnimatedSection delay={0.2}>
           <div
             ref={counterRef}
-            className="mt-7 md:mt-8 flex items-center justify-center gap-2.5 md:gap-3.5 flex-wrap"
+            className="mt-7 md:mt-8 flex items-center justify-center gap-1.5 max-md:flex-nowrap md:gap-3.5"
             role="status"
             aria-label={`${totalParticipants} trees planted by Karimba explorers`}
           >

@@ -33,7 +33,7 @@ export default function ExploreCTA() {
                   index > 0 ? "lg:border-l lg:border-[rgba(244,240,232,0.2)]" : ""
                 }
               >
-                <p className="font-headline text-4xl font-bold text-[#F4F0E8] md:text-5xl">
+                <p className="font-headline text-4xl max-md:text-3xl font-bold text-[#F4F0E8] md:text-5xl">
                   {stat.value}
                   {stat.unit && (
                     <span className="ml-1.5 text-2xl font-bold text-[#577831] md:text-3xl">

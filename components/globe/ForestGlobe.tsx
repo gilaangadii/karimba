@@ -410,7 +410,7 @@ export default function ForestGlobe({
         }}
       />
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 text-xs font-body text-neutral/40 z-10 pointer-events-none select-none">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 text-xs max-md:text-[10px] font-body text-neutral/40 z-10 pointer-events-none select-none whitespace-nowrap max-w-[calc(100vw-3rem)]">
         <span className="w-1.5 h-1.5 rounded-full bg-accent" style={{ animation: 'karimba-pulse 2s infinite' }} />
         Drag to rotate · Scroll to zoom
       </div>

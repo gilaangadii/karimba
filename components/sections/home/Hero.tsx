@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-primary)_0%,_transparent_80%)]" />
       </div>
 
-      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 pt-24 md:pt-32">
+      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 pt-24 md:pt-32 max-md:pt-28 max-md:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-4 items-center min-h-[calc(100vh-8rem)]">
           <div className="order-1">
             <motion.p
@@ -119,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="order-2 relative"
+            className="order-2 relative w-full max-md:mx-auto max-md:max-w-[440px] md:max-lg:mx-auto md:max-lg:max-w-[560px]"
           >
             <div
               className="relative w-full mx-auto lg:max-w-none"

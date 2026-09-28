@@ -233,39 +233,46 @@ export const issueDetails: Record<string, IssueDetail> = {
     overviewHeading: "What Are Forest Fires?",
     video: "/images/issues/Forest_Fire.mp4",
     videoSourceUrl: "https://youtu.be/5hghT1W33cY?si=4JcVKP2rtWP1oqts",
+    stats: [
+      { value: "1,437", unit: "", label: "High-confidence hotspots nationwide (14 Sep 2026)" },
+      { value: "689", unit: "", label: "Hotspots in Central Kalimantan, the highest province" },
+      { value: "53", unit: "", label: "Aircraft fleet on standby (34 water bombing + 19 patrol)" },
+    ],
+    statsSource: "Source: SiPongi / Kementerian Kehutanan, 14 Sep 2026",
     overviewBody: [
       "Forest and land fires ignite almost every dry season in Indonesia, most severely where peatlands have been drained for plantations and development.",
       "Once alight, peat can smoulder underground for weeks. The resulting haze crosses provincial and national borders, turning a land problem into a regional crisis.",
     ],
     trendEyebrow: "National Trend",
-    trendHeading: "Burned Area Over Time",
+    trendHeading: "Hotspot Surge in Two Days",
     trendIntro:
-      "The official indicator is burned area, compiled from KLHK and SIPONGI records. Burned area must never be confused with hotspot counts or fire-event numbers.",
+      "SiPongi satellites detected a sharp overnight surge in high-confidence hotspots. A hotspot marks a surface-temperature anomaly — each indication is verified on the ground, since one fire can produce several hotspots.",
     trend: {
-      metric: "Burned Area",
-      unit: "ha",
-      period: "Pending official annual series",
+      metric: "High-confidence hotspots (daily count)",
+      unit: "hotspots",
+      period: "13–14 September 2026",
       scope: "Indonesia",
-      source: "KLHK / SIPONGI (official series)",
-      note: "Annual values will appear here once verified from official releases. No estimates are displayed.",
-      rows: [],
+      source: "SiPongi / Kementerian Kehutanan (NASA Terra/Aqua, SNPP, NOAA-20)",
+      rows: [
+        { label: "13 Sep 2026", value: 592, display: "592 hotspots" },
+        { label: "14 Sep 2026", value: 1437, display: "1,437 hotspots" },
+      ],
     },
     focusEyebrow: "A Closer Look",
     focusHeading: "Where Are Forest Fires Most Severe?",
     focusIntro:
-      "Fire follows drainage. Peat domes of Sumatra and Kalimantan and the dry lowlands of the east face the most recurrent burning.",
+      "Six priority provinces drive the national response. Central Kalimantan alone holds nearly half of all high-confidence hotspots.",
     focusItems: [
-      {
-        title: "Peatlands of Sumatra & Kalimantan",
-        note: "Drained peat domes ignite easily and burn underground for weeks.",
-      },
-      {
-        title: "Dry Lowlands of Nusa Tenggara",
-        note: "Long dry seasons turn savanna and monsoon forest highly flammable.",
-      },
+      { title: "Kalimantan Tengah", value: "689 hotspots" },
+      { title: "Kalimantan Barat", value: "203 hotspots" },
+      { title: "Sumatera Selatan", value: "116 hotspots" },
+      { title: "Kalimantan Selatan", value: "112 hotspots" },
+      { title: "Jambi", value: "9 hotspots" },
+      { title: "Riau", value: "0 hotspots" },
     ],
-    focusFooterNote: "Provincial ranking pending a verified annual burned-area series.",
-    focusSource: "Source: KLHK / SIPONGI (official series).",
+    focusFooterNote:
+      "Counts are high-confidence hotspots on 14 Sep 2026 — an anomaly indication, not a count of fire events.",
+    focusSource: "Source: SiPongi / Kementerian Kehutanan, 14 Sep 2026.",
     driversHeading: "What Starts the Fires?",
     driversIntro:
       "Almost all forest fires in Indonesia are linked to human activity interacting with drained, flammable landscapes.",
@@ -338,6 +345,7 @@ export const issueDetails: Record<string, IssueDetail> = {
     actions: [
       {
         icon: "shield",
+        image: "/images/issues/Prevent_Open_Burning.jpg",
         title: "Prevent Open Burning",
         description:
           "Enforce zero-burning rules and promote fire-free land preparation.",
@@ -376,22 +384,32 @@ export const issueDetails: Record<string, IssueDetail> = {
     overviewHeading: "What Is Biodiversity Loss?",
     video: "/images/issues/Biodiversity_loss.mp4",
     videoSourceUrl: "https://youtu.be/lcNh_ZS3u-k?si=UaQrX5-6agBen-rz",
+    stats: [
+      { value: ">17%", unit: "", label: "Share of the world's biodiversity held by Indonesia" },
+      { value: "0.75", unit: "", label: "Red List Index 2024 (down from 0.77 in 2018)" },
+      { value: "4", unit: "", label: "Biogeographic status documents launched (Papua, Bali–Nusa Tenggara, Jawa, Maluku)" },
+    ],
+    statsSource: "Source: Kementerian Kehutanan, 21 Jul 2026",
     overviewBody: [
       "Biodiversity loss is the decline and disappearance of species, driven in Indonesia mainly by shrinking and fragmenting forest habitat.",
       "Because so many Indonesian species live nowhere else, losing a single forest can mean losing species the world will never see again.",
     ],
     trendEyebrow: "National Trend",
-    trendHeading: "Species at Risk",
+    trendHeading: "Red List Index Over Time",
     trendIntro:
-      "There is no single official yearly 'biodiversity loss' number. The meaningful indicator is how many assessed species face extinction — not invented species-lost-per-year figures.",
+      "The Red List Index (SDG 15.5.1) tracks aggregate extinction risk: falling values mean rising risk. Indonesia's index slipped between 2018 and 2024, with a government target to lift it by 2029.",
     trend: {
-      metric: "Species assessed as threatened",
-      unit: "species (IUCN Red List)",
-      period: "Latest assessment",
+      metric: "Red List Index",
+      unit: "index (0–1)",
+      period: "2018–2024, with 2029 target",
       scope: "Indonesia",
-      source: "IUCN Red List",
-      note: "Counts change as assessments are updated. Annual values will appear here once a verified yearly series exists.",
-      rows: [],
+      source: "Kementerian Kehutanan",
+      note: "2029 is an official government target, not an observed value.",
+      rows: [
+        { label: "2018 (observed)", value: 0.77, display: "0.77" },
+        { label: "2024 (observed)", value: 0.75, display: "0.75" },
+        { label: "2029 (target)", value: 0.76, display: "0.76" },
+      ],
     },
     focusEyebrow: "A Closer Look",
     focusHeading: "Which Species Are Most at Risk?",
@@ -516,27 +534,35 @@ export const issueDetails: Record<string, IssueDetail> = {
     overviewHeading: "What Is Climate Change?",
     video: "/images/issues/Climate_Change.mp4",
     videoSourceUrl: "https://youtu.be/G4H1N_yXBiA?si=VUgqndzs1OlsNhK9",
+    stats: [
+      { value: "+0.38°C", unit: "", label: "Average temperature anomaly in 2025 (vs 1991–2020 normal)" },
+      { value: "27.05°C", unit: "", label: "Average temperature 2025 from 115 BMKG stations" },
+      { value: "#43", unit: "", label: "Indonesia's CCPI rank — overall low performer" },
+    ],
+    statsSource: "Sources: BMKG (2025); Climate Change Performance Index (CCPI 2026)",
     overviewBody: [
       "Climate change is the long-term shift in temperatures and weather patterns, driven by rising greenhouse gases in the atmosphere.",
       "Indonesia's forests both suffer from and influence this change: stressed by heat and extremes, yet vital as carbon vaults and rainfall makers.",
     ],
     trendEyebrow: "National Trend",
-    trendHeading: "Temperature Anomaly Over Time",
+    trendHeading: "Average Temperature: Normal vs 2025",
     trendIntro:
-      "BMKG reports annual temperature anomalies against the 1991–2020 normal period. An anomaly must always be labeled as such — never presented as plain temperature.",
+      "BMKG reports annual temperature anomalies against the 1991–2020 normal period (26.7 °C). In 2025 the national average reached 27.05 °C — an anomaly of +0.38 °C and the 6th warmest year since 1981.",
     trend: {
-      metric: "Annual mean temperature anomaly",
-      unit: "°C vs 1991–2020 normal",
-      period: "Pending official annual series",
-      scope: "Indonesia",
+      metric: "Annual mean temperature",
+      unit: "°C",
+      period: "1991–2020 normal vs 2025",
+      scope: "Indonesia (115 BMKG stations)",
       source: "BMKG, Climate Information",
-      note: "Yearly values will appear here once verified from BMKG releases. Incomplete years are labeled YTD, never as full-year values.",
-      rows: [],
+      rows: [
+        { label: "1991–2020 normal", value: 26.7, display: "26.7 °C" },
+        { label: "2025 average", value: 27.05, display: "27.05 °C" },
+      ],
     },
     focusEyebrow: "A Closer Look",
     focusHeading: "How Is Climate Change Affecting Forests?",
     focusIntro:
-      "Three linked pathways connect a warming climate to weakening forests.",
+      "Three linked pathways connect a warming climate to weakening forests — alongside Indonesia's standing in global climate performance.",
     focusItems: [
       {
         title: "Rising Mean Temperatures",
@@ -550,8 +576,12 @@ export const issueDetails: Record<string, IssueDetail> = {
         title: "Stronger Extremes",
         note: "Drought–flood swings amplify fires, landslides, and pest outbreaks across forest landscapes.",
       },
+      {
+        title: "CCPI Rank #43 — Low Performer",
+        note: "Indonesia rates low in all CCPI categories: GHG Emissions, Renewable Energy, Climate Policy, and Energy Use.",
+      },
     ],
-    focusSource: "Source: BMKG, Climate Information.",
+    focusSource: "Sources: BMKG, Climate Information; Climate Change Performance Index (CCPI 2026).",
     driversHeading: "What Drives the Change?",
     driversIntro:
       "Greenhouse gases from human activity trap heat, and deforestation removes the sinks that would absorb it.",

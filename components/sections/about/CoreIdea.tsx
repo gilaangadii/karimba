@@ -84,7 +84,7 @@ export default function CoreIdea() {
                   key={stat.label}
                   className="border-l border-[rgba(244,240,232,0.2)] pl-3 md:pl-4"
                 >
-                  <dd className="font-headline text-2xl font-bold text-[#F4F0E8] md:text-4xl">
+                  <dd className="font-headline text-2xl max-md:text-xl font-bold text-[#F4F0E8] md:text-4xl">
                     <StatValue value={stat.value} decimals={stat.decimals} />
                     {stat.unit && (
                       <span className="ml-1.5 text-lg font-bold text-[#577831] md:text-2xl">

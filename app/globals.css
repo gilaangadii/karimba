@@ -279,6 +279,50 @@
     }
   }
 
+  /* ============================================================
+     RESPONSIVE SAFETY — mobile & tablet only.
+     Desktop (>=1024px) is intentionally untouched below.
+     ============================================================ */
+  @media (max-width: 767px) {
+    html,
+    body {
+      overflow-x: clip;
+    }
+
+    img,
+    video,
+    canvas {
+      max-width: 100%;
+    }
+
+    /* Digit tiles: shrink as one unit, never wrap */
+    .participation-tile {
+      width: clamp(2.2rem, 11.5vw, 3.5rem);
+      height: clamp(3.2rem, 16vw, 5rem);
+      font-size: clamp(1.15rem, 5vw, 1.75rem);
+      border-radius: 8px;
+      flex: none;
+    }
+
+    /* Home statistics numbers scale with viewport */
+    #discover .font-headline {
+      font-size: clamp(1.4rem, 8vw, 1.875rem);
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    html,
+    body {
+      overflow-x: clip;
+    }
+
+    .participation-tile {
+      width: 3.75rem;
+      height: 5.25rem;
+      font-size: 2rem;
+    }
+  }
+
   /* Globe 3D interaction card — elegant dark glass, high-readability text */
   .globe-info-card {
     position: relative;

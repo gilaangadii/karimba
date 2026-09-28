@@ -4,13 +4,13 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 const steps = [
   {
     number: "01",
-    title: "You Visit",
-    description: "Every visit to KARIMBA automatically plants one virtual seed.",
+    title: "You Visit & Register Account",
+    description: "When you log in to KARIMBA and register an account, you plant one virtual seed.",
   },
   {
     number: "02",
     title: "A Seed is Planted",
-    description: "Your visit adds to our growing forest of change.",
+    description: "Your registration adds to our growing forest of change.",
   },
   {
     number: "03",
@@ -43,13 +43,13 @@ export default function HowItWorks() {
                 How It Works
               </p>
               <h2 className="max-w-md font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-3xl lg:text-4xl">
-                From a Visit to a Growing Forest
+                From a User to a Growing Forest
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <p className="max-w-sm text-xs font-body leading-relaxed text-[#F4F0E8]/60 md:text-right md:text-sm">
-              A simple journey with lasting impact. Every visit counts, and
+              A simple journey with lasting impact. Every user counts, and
               together we grow a forest of awareness, knowledge, and action.
             </p>
           </AnimatedSection>
