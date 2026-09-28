@@ -426,11 +426,11 @@ export default function AuthExperience() {
         {/* Login panel — right half on desktop */}
         <div
           className={cn(
-            "relative z-0 flex flex-1 flex-col px-6 py-8 sm:px-10 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:overflow-y-auto lg:px-12 lg:py-10 will-change-transform",
+            "z-0 flex flex-col px-6 py-8 sm:px-10 lg:w-1/2 lg:overflow-y-auto lg:px-12 lg:py-10 will-change-transform",
             SLIDE,
             FADE,
             mode === "login"
-              ? "visible opacity-100 lg:translate-x-0"
+              ? "visible relative flex-1 opacity-100 lg:absolute lg:inset-y-0 lg:right-0 lg:translate-x-0"
               : "invisible pointer-events-none absolute inset-0 opacity-0 lg:left-auto lg:translate-x-10"
           )}
           aria-hidden={mode !== "login"}
@@ -445,11 +445,11 @@ export default function AuthExperience() {
         {/* Register panel — left half on desktop */}
         <div
           className={cn(
-            "relative z-0 flex flex-1 flex-col px-6 py-8 sm:px-10 lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2 lg:overflow-y-auto lg:px-12 lg:py-10 will-change-transform",
+            "z-0 flex flex-col px-6 py-8 sm:px-10 lg:w-1/2 lg:overflow-y-auto lg:px-12 lg:py-10 will-change-transform",
             SLIDE,
             FADE,
             mode === "register"
-              ? "visible opacity-100 lg:translate-x-0"
+              ? "visible relative flex-1 opacity-100 lg:absolute lg:inset-y-0 lg:left-0 lg:translate-x-0"
               : "invisible pointer-events-none absolute inset-0 opacity-0 lg:right-auto lg:-translate-x-10"
           )}
           aria-hidden={mode !== "register"}

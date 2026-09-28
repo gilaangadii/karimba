@@ -149,7 +149,7 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute top-4 right-0 md:top-8 md:right-[-20px] z-30 w-[calc(100%-2rem)] max-w-sm"
+                className="absolute top-4 right-0 md:top-8 md:right-[-20px] z-30 w-[calc(100%-2rem)] max-w-sm max-lg:static max-lg:mt-4 max-lg:w-full max-lg:max-w-none"
               >
                 <ForestInfoCard
                   forest={selectedForest}
