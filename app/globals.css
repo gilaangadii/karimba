@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+/* ============================================================
+   KARIMBA — CENTRAL COLOR SYSTEM
+   ============================================================
+   All colors for the entire website are defined here.
+   To change the palette, modify ONLY this file.
+   ============================================================ */
+
 @theme inline {
+  /* --------------------------------------------------------
+     BASE PALETTE — Source colors
+     -------------------------------------------------------- */
   --color-primary: #1E3420;
   --color-primary-light: #243A22;
   --color-primary-dark: #1B301F;
@@ -11,15 +21,116 @@
   --color-tertiary: #F7AF36;
   --color-tertiary-dark: #e59a1f;
   --color-earth: #50371A;
+  --color-earth-light: #6B4E28;
+  --color-earth-dark: #3A2918;
   --color-neutral: #F4F0E8;
   --color-neutral-dark: #e8e2d6;
+  --color-neutral-light: #d0d0d0;
+
+  /* --------------------------------------------------------
+     BACKGROUND SCALE — Section surfaces
+     Each section gets a unique background for visual separation.
+     -------------------------------------------------------- */
+  --color-bg-page: #08110C;
+  --color-bg-deep: #0B160F;
+  --color-bg-forest: #122217;
+  --color-bg-primary: #1E3420;
+  --color-bg-leaf: #253B20;
+  --color-bg-earth: #3A2918;
+  --color-bg-earth-deep: #2A1D12;
+
+  /* Semantic section backgrounds */
+  --color-bg-navbar: #0a120b;
+  --color-bg-hero: #122217;
+  --color-bg-stats: #101c12;
+  --color-bg-importance: #18281a;
+  --color-bg-explorer: #101A12;
+  --color-bg-wildlife: #101A12;
+  --color-bg-threats: #201b13;
+  --color-bg-data: #111d13;
+  --color-bg-footer: #0a120b;
+
+  /* Card backgrounds */
+  --color-bg-card: #263D22;
+  --color-bg-card-warm: #3A2918;
+  --color-bg-card-dark: #18271A;
+
+  /* Surface layers (z-depth) */
   --color-surface: #1B301F;
   --color-surface-light: #243A22;
   --color-surface-lighter: #2D4625;
 
+  /* --------------------------------------------------------
+     BLEND COLORS — Mix of #1E3420 + #50371A
+     -------------------------------------------------------- */
+  --color-blend-01: #182A1B;
+  --color-blend-02: #22331F;
+  --color-blend-03: #2A3820;
+  --color-blend-04: #30361D;
+  --color-blend-05: #3A2D19;
+  --color-blend-06: #50371A;
+
+  /* --------------------------------------------------------
+     TEXT COLORS — Typography hierarchy
+     -------------------------------------------------------- */
+  --color-text-primary: #F4F0E8;
+  --color-text-secondary: rgba(244, 240, 232, 0.72);
+  --color-text-muted: rgba(244, 240, 232, 0.48);
+  --color-text-label: #DDEA81;
+  --color-text-number: #F8EB8C;
+  --color-text-cta: #F7AF36;
+
+  /* --------------------------------------------------------
+     BORDER SYSTEM
+     -------------------------------------------------------- */
+  --color-border-subtle: rgba(244, 240, 232, 0.08);
+  --color-border-default: rgba(244, 240, 232, 0.12);
+  --color-border-strong: rgba(244, 240, 232, 0.20);
+  --color-border-accent: rgba(221, 234, 129, 0.35);
+  --color-border-warm: rgba(247, 175, 54, 0.35);
+  --color-border-section: rgba(244, 240, 232, 0.06);
+
+  /* --------------------------------------------------------
+     BUTTON SYSTEM
+     -------------------------------------------------------- */
+  --color-btn-primary-bg: #DDEA81;
+  --color-btn-primary-text: #1E3420;
+  --color-btn-primary-hover: #F8EB8C;
+  --color-btn-secondary-border: #577831;
+  --color-btn-secondary-text: #DDEA81;
+  --color-btn-secondary-hover: rgba(87, 120, 49, 0.18);
+  --color-btn-warning-bg: #F7AF36;
+  --color-btn-warning-text: #1E3420;
+
+  /* --------------------------------------------------------
+     GLOBE TOKENS — Brighter, natural Earth palette
+     -------------------------------------------------------- */
+  --color-globe-ocean: #0D1F1A;
+  --color-globe-ocean-highlight: #183D34;
+  --color-globe-land-dark: #263B27;
+  --color-globe-land-hover: #3A5130;
+  --color-globe-land: #577831;
+  --color-globe-land-highlight: #71984A;
+  --color-globe-indonesia: #7FA94B;
+  --color-globe-indonesia-border: #1E3420;
+  --color-globe-indonesia-highlight: #A6D96A;
+  --color-globe-indonesia-active: #DDEA81;
+  --color-globe-marker: #F8EB8C;
+  --color-globe-marker-active: #F7AF36;
+  --color-globe-atmosphere: rgba(45, 70, 37, 0.35);
+  --color-globe-other-border: rgba(166, 217, 106, 0.15);
+  --color-globe-other-side: rgba(38, 59, 39, 0.7);
+
+  /* --------------------------------------------------------
+     FONT TOKENS
+     -------------------------------------------------------- */
   --font-headline: "Playfair Display", Georgia, serif;
   --font-body: "Manrope", system-ui, sans-serif;
 }
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
 
 @layer base {
   * {
@@ -33,8 +144,8 @@
   }
 
   body {
-    background-color: var(--color-surface);
-    color: var(--color-neutral);
+    background-color: var(--color-bg-page);
+    color: var(--color-text-primary);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -51,11 +162,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-surface);
+    background: var(--color-bg-deep);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-primary-light);
+    background: var(--color-blend-03);
     border-radius: 3px;
   }
 
@@ -64,35 +175,135 @@
   }
 }
 
+/* ============================================================
+   COMPONENT CLASSES
+   ============================================================ */
+
 @layer components {
-  .text-gradient {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-tertiary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Forest Explorer cards — unified elegant dark glass, consistent shape */
+  .forest-card--glass {
+    position: relative;
+    background-color: rgba(30, 52, 32, 0.58) !important;
+    backdrop-filter: blur(14px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(120%) !important;
+    border: 1px solid rgba(244, 240, 232, 0.14) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22), 0 1px 3px rgba(0, 0, 0, 0.12) !important;
   }
 
-  .glass {
-    background: rgba(36, 58, 34, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(87, 120, 49, 0.1);
+  .forest-card--glass:hover {
+    border-color: rgba(221, 234, 129, 0.32) !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.12) !important;
   }
 
-  .glass-dark {
-    background: rgba(27, 48, 31, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(87, 120, 49, 0.08);
-  }
-
-  .overlay-dark {
+  .forest-card--glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
     background: linear-gradient(
-      180deg,
-      rgba(27, 48, 31, 0.3) 0%,
-      rgba(27, 48, 31, 0.7) 50%,
-      rgba(27, 48, 31, 0.95) 100%
+      135deg,
+      rgba(244, 240, 232, 0.09),
+      rgba(244, 240, 232, 0.02) 40%,
+      rgba(244, 240, 232, 0.00) 65%
     );
+    z-index: 1;
+  }
+
+  /* Scoped styling for Forest Importance cards — square, contrasting, slightly transparent */
+  .importance-card--square {
+    border-radius: 10px !important;
+    background-color: rgba(42, 29, 18, 0.68) !important;
+    backdrop-filter: blur(12px) saturate(110%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(110%) !important;
+    border: 1px solid rgba(244, 240, 232, 0.16) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .importance-card--square:hover {
+    background-color: rgba(42, 29, 18, 0.78) !important;
+    border-color: rgba(221, 234, 129, 0.35) !important;
+  }
+
+  /* Data Story campaign section — scoped editorial campaign styles */
+  .campaign-card {
+    background-color: #1E3420;
+    border: 1px solid rgba(244, 240, 232, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
+
+  .campaign-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #C5D182;
+    color: #1E3420;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(244, 240, 232, 0.12);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .campaign-cta:hover {
+    background-color: #DDEA81;
+  }
+
+  .participation-tile {
+    width: 3.5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-headline);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F4F0E8;
+    background-color: rgba(87, 120, 49, 0.55);
+    border: 1px solid rgba(221, 234, 129, 0.15);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (min-width: 768px) {
+    .participation-tile {
+      width: 4rem;
+      height: 5.75rem;
+      font-size: 2.25rem;
+    }
+  }
+
+  /* Globe 3D interaction card — elegant dark glass, high-readability text */
+  .globe-info-card {
+    position: relative;
+    background-color: rgba(16, 26, 18, 0.88) !important;
+    backdrop-filter: blur(16px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+    border: 1px solid rgba(244, 240, 232, 0.14) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+    overflow: hidden;
+  }
+
+  .globe-info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(244, 240, 232, 0.07),
+      rgba(244, 240, 232, 0.015) 40%,
+      rgba(244, 240, 232, 0.00) 65%
+    );
+    z-index: 0;
   }
 
   .section-padding {
@@ -112,6 +323,10 @@
   }
 }
 
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
 @layer utilities {
   .animate-pulse-slow {
     animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -129,6 +344,10 @@
     animation: scale-in 0.4s ease-out forwards;
   }
 }
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
 
 @keyframes pulse-slow {
   0%, 100% {
@@ -170,11 +389,15 @@
   }
 }
 
+/* ============================================================
+   GLOBE MARKER STYLES
+   ============================================================ */
+
 .globe-marker-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #DDEA81;
+  background: var(--color-globe-marker);
   box-shadow: 0 0 8px 2px rgba(221, 234, 129, 0.4);
   transform: translate(-50%, -50%);
   transition: all 0.3s ease;
@@ -194,7 +417,7 @@
 .globe-marker-dot.active {
   width: 12px;
   height: 12px;
-  background: #F7AF36;
+  background: var(--color-globe-marker-active);
   box-shadow: 0 0 12px 4px rgba(247, 175, 54, 0.5);
 }
 
@@ -221,6 +444,10 @@
 .scene > canvas {
   outline: none !important;
 }
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

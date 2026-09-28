@@ -1,24 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { Globe, MessageCircle, Share2, Mail } from "lucide-react";
 
 const footerLinks = {
   navigasi: [
-    { label: "Explore", href: "#explore" },
-    { label: "Discover", href: "#discover" },
-    { label: "Issues", href: "#issues" },
-    { label: "Stories", href: "#stories" },
-    { label: "About", href: "#about" },
-  ],
-  bahasa: [
-    { label: "ID", href: "#", active: true },
-    { label: "EN", href: "#" },
+    { label: "Home", href: "/" },
+    { label: "Explore", href: "/explore" },
+    { label: "Issues", href: "/issues" },
+    { label: "About", href: "/about" },
   ],
   sumberData: [
-    { label: "KLHK", href: "#" },
-    { label: "WWF Indonesia", href: "#" },
-    { label: "FAO", href: "#" },
-    { label: "BPS Indonesia", href: "#" },
+    { label: "KLHK", href: "https://www.kehutanan.go.id/" },
+    { label: "WWF Indonesia", href: "https://www.worldwildlife.org/places/indonesia" },
+    { label: "FAO", href: "https://www.fao.org/indonesia/en/" },
+    { label: "BPS Indonesia", href: "https://www.bps.go.id/" },
   ],
 };
 
@@ -31,9 +27,9 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="about" className="bg-surface border-t border-neutral/10">
+    <footer id="about" className="bg-bg-footer border-t border-border-subtle">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-10">
           <div className="lg:col-span-1">
             <a
               href="#"
@@ -42,23 +38,23 @@ export default function Footer() {
               KARIMBA
             </a>
             <p className="text-sm font-body text-neutral/60 leading-relaxed max-w-xs">
-              Menjelajahi kekayaan alam dan keanekaragaman hayati yang tersembunyi di dalam hutan Indonesia.
+              Exploring the natural wealth and hidden biodiversity within Indonesia's rainforests.
             </p>
           </div>
 
           <div>
             <h4 className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-neutral/40 mb-4">
-              Navigasi
+              Navigation
             </h4>
             <ul className="space-y-3">
               {footerLinks.navigasi.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm font-body text-neutral/60 hover:text-secondary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -66,32 +62,15 @@ export default function Footer() {
 
           <div>
             <h4 className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-neutral/40 mb-4">
-              Bahasa
-            </h4>
-            <div className="flex items-center gap-3 mb-8">
-              {footerLinks.bahasa.map((lang) => (
-                <a
-                  key={lang.label}
-                  href={lang.href}
-                  className={`text-sm font-body transition-colors ${
-                    lang.active
-                      ? "text-secondary font-medium"
-                      : "text-neutral/60 hover:text-secondary"
-                  }`}
-                >
-                  {lang.label}
-                </a>
-              ))}
-            </div>
-
-            <h4 className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-neutral/40 mb-4">
-              Sumber Data
+              Data Sources
             </h4>
             <ul className="space-y-3">
               {footerLinks.sumberData.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm font-body text-neutral/60 hover:text-secondary transition-colors"
                   >
                     {link.label}
@@ -103,7 +82,7 @@ export default function Footer() {
 
           <div>
             <h4 className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-neutral/40 mb-4">
-              Ikuti Kami
+              Follow Us
             </h4>
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
@@ -125,10 +104,16 @@ export default function Footer() {
             &copy; 2026 KARIMBA. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs font-body text-neutral/40 hover:text-secondary transition-colors">
+            <a
+              href="#"
+              className="text-xs font-body text-neutral/40 hover:text-secondary transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-xs font-body text-neutral/40 hover:text-secondary transition-colors">
+            <a
+              href="#"
+              className="text-xs font-body text-neutral/40 hover:text-secondary transition-colors"
+            >
               Terms of Service
             </a>
           </div>

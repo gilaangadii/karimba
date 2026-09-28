@@ -3,29 +3,29 @@ import { Threat } from "@/types";
 export const threats: Threat[] = [
   {
     id: "deforestasi",
-    title: "Deforestasi",
+    title: "Deforestation",
     description:
-      "Hilangnya hutan secara besar-besaran akibat penebangan, konversi lahan, dan aktivitas manusia lainnya.",
+      "The large-scale loss of forests due to logging, land conversion, and other human activities.",
     impact:
-      "Indonesia kehilangan sekitar 1,04 juta hektar hutan per tahun. Dampak meliputi hilangnya habitat satwa, erosi tanah, dan peningkatan emisi karbon.",
-    image: "/images/threats/deforestasi.jpg",
+      "Indonesia loses about 1.04 million hectares of forest per year. Impacts include habitat loss for wildlife, soil erosion, and increased carbon emissions.",
+    image: "/images/issues/Deforestasi.jpg",
   },
   {
     id: "kebakaran",
-    title: "Kebakaran Hutan",
+    title: "Forest Fires",
     description:
-      "Kebakaran hutan dan lahan yang terjadi setiap tahun, terutama di area gambut.",
+      "Forest and land fires that occur annually, particularly in peatland areas.",
     impact:
-      "Kebakaran menghasilkan polusi udara yang masif, merusak ekosistem, dan melepaskan jutaan ton karbon ke atmosfer.",
-    image: "/images/threats/kebakaran.jpg",
+      "Fires generate massive air pollution, damage ecosystems, and release millions of tons of carbon into the atmosphere.",
+    image: "/images/issues/Kebakaran_Hutan.jpg",
   },
   {
     id: "kehilangan-biodiversitas",
-    title: "Kehilangan Keanekaragaman Hayati",
+    title: "Loss of Biodiversity",
     description:
-      "Spesies terancam punah akibat hilangnya habitat dan perburuan liar.",
+      "Species threatened with extinction due to habitat loss and poaching.",
     impact:
-      "Banyak spesies endemik Indonesia berada di ambang kepunahan. Kehilangan spesies mengganggu keseimbangan seluruh ekosistem.",
-    image: "/images/threats/biodiversitas.jpg",
+      "Many endemic species in Indonesia are on the brink of extinction. The loss of species disrupts the balance of entire ecosystems.",
+    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",
   },
 ];

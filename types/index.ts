@@ -28,12 +28,6 @@ export interface Threat {
   image: string;
 }
 
-export interface Statistic {
-  value: string;
-  label: string;
-  sublabel?: string;
-}
-
 export interface Wildlife {
   id: string;
   name: string;
@@ -41,18 +35,4 @@ export interface Wildlife {
   habitat: string;
   role: string;
   image: string;
-}
-
-export interface ForestImportance {
-  number: string;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export interface DataStoryItem {
-  label: string;
-  value: string;
-  description: string;
-  source?: string;
 }
