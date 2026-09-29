@@ -243,11 +243,13 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  const [terms, setTerms] = useState(false);
   const [errors, setErrors] = useState<{
     name?: string;
     email?: string;
     password?: string;
     confirm?: string;
+    terms?: string;
     form?: string;
   }>({});
 
@@ -265,8 +267,9 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
       next.password = "Password must contain at least 8 characters.";
     if (!confirm) next.confirm = "Please complete this field.";
     else if (confirm !== password) next.confirm = "Passwords do not match.";
+    if (!terms) next.terms = "Please agree to the Terms of Service and Privacy Policy to continue.";
     setErrors(next);
-    if (next.name || next.email || next.password || next.confirm) return;
+    if (next.name || next.email || next.password || next.confirm || next.terms) return;
     const result = register(name, email, password);
     if (!result.ok) {
       setErrors({ form: result.error });
@@ -347,12 +350,18 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
           </p>
         )}
 
-        <label className="flex cursor-pointer items-start gap-2 text-xs font-body leading-relaxed text-[#1E3420]/70">
-          <input
-            type="checkbox"
-            required
-            className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded border-[#1E3420]/30 accent-[#1E3420]"
-          />
+        <div>
+          <label className="flex cursor-pointer items-start gap-2 text-xs font-body leading-relaxed text-[#1E3420]/70">
+            <input
+              type="checkbox"
+              checked={terms}
+              onChange={(e) => {
+                setTerms(e.target.checked);
+                clear("terms");
+              }}
+              aria-describedby={errors.terms ? "register-terms-error" : undefined}
+              className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded border-[#1E3420]/30 accent-[#1E3420]"
+            />
           <span>
             I agree to the{" "}
             <a href="#" className="font-medium text-[#1E3420] underline underline-offset-2">
@@ -364,7 +373,13 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
             </a>
             .
           </span>
-        </label>
+          </label>
+          {errors.terms && (
+            <p id="register-terms-error" role="alert" className="mt-1.5 text-[11px] font-body text-[#B4443C]">
+              {errors.terms}
+            </p>
+          )}
+        </div>
 
         <button
           type="submit"
