@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -14,6 +15,9 @@ interface Props {
 }
 
 export default function IssueDetailHero({ label, title, subtitle, description, image }: Props) {
+  const { dict } = useLanguage();
+  const text = dict.issues.detail;
+
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
       <div
@@ -76,7 +80,7 @@ export default function IssueDetailHero({ label, title, subtitle, description, i
             href="#overview"
             className="inline-flex items-center gap-2 rounded-md border border-[rgba(244,240,232,0.25)] px-4 py-2.5 text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[#F4F0E8]/80 transition-all hover:border-[#DDEA81] hover:text-[#DDEA81]"
           >
-            Scroll to Explore
+            {text.scroll}
             <ArrowDown size={13} className="animate-bounce" />
           </a>
         </motion.div>

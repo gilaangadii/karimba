@@ -7,16 +7,18 @@ import { ChevronDown } from "lucide-react";
 import ForestGlobe from "@/components/globe/ForestGlobe";
 import ForestInfoCard from "@/components/globe/ForestInfoCard";
 import { Forest } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Hero() {
   const [selectedForest, setSelectedForest] = useState<Forest | null>(null);
   const router = useRouter();
+  const { dict } = useLanguage();
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/hero-bg.png')" }}
+      style={{ backgroundImage: "url('/images/hero-bg.png')" }} //local asset
     >
       <div className="absolute inset-0 bg-bg-hero/55 z-10" />
 
@@ -37,7 +39,7 @@ export default function Hero() {
               }}
               className="text-xs md:text-sm font-body font-semibold tracking-[0.25em] uppercase text-neutral-light/80 mb-4 md:mb-6"
             >
-              Indonesia&apos;s Forests
+              {dict.home.hero.eyebrow}
             </motion.p>
 
             <motion.h1
@@ -70,9 +72,9 @@ export default function Hero() {
     text-transparent
   "
               >
-                THE WILD SIDE
+                {dict.home.hero.titleLead}
                 <br />
-                OF INDONESIA.
+                {dict.home.hero.titleHighlight}
               </span>
             </motion.h1>
 
@@ -86,8 +88,7 @@ export default function Hero() {
               }}
               className="mt-5 text-sm md:text-base font-body font-semibold text-neutral-light/60 leading-relaxed max-w-md mb-8 md:mb-10"
             >
-              Explore the beauty of Indonesia’s forests and discover the life
-              within.
+              {dict.home.hero.subtitle}
             </motion.p>
 
             <motion.div
@@ -102,15 +103,15 @@ export default function Hero() {
             >
               <span className="flex items-center gap-1.5">
                 <span className="w-1 h-1 rounded-full bg-secondary/60" />
-                Spin the globe
+                {dict.home.hero.hintSpin}
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-1 h-1 rounded-full bg-secondary/60" />
-                Pick a spot
+                {dict.home.hero.hintPick}
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-1 h-1 rounded-full bg-secondary/60" />
-                Discover the forest
+                {dict.home.hero.hintDiscover}
               </span>
             </motion.div>
           </div>
@@ -169,7 +170,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 animate-bounce"
       >
         <span className="text-[10px] font-body tracking-[0.2em] uppercase text-neutral/30">
-          Scroll
+          {dict.home.hero.scroll}
         </span>
         <ChevronDown size={16} className="text-neutral/30" />
       </motion.div>

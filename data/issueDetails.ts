@@ -77,9 +77,9 @@ export const issueDetails: Record<string, IssueDetail> = {
     subtitle: "Vanishing Forests, Uncertain Tomorrows",
     description:
       "Loss of forest cover due to land conversion, logging, mining, infrastructure development and other pressures continues to affect Indonesia's forests and ecosystems.",
-    image: "/images/issues/Deforestation.jpg",
+    image: "/images/issues/Deforestation.jpg",//https://id.wikipedia.org/wiki/Deforestasi
     overviewHeading: "What is Deforestation?",
-    video: "/images/issues/Deforestation.mp4",
+    video: "/images/issues/Deforestation.mp4",//https://id.wikipedia.org/wiki/Deforestasi
     videoSourceUrl: "https://youtu.be/Ic-J6hcSKa8?si=Aj_aFXGlNIvu_hed",
     overviewBody: [
       "Deforestation is the permanent removal or loss of forest cover, usually caused by changes in land use such as agriculture, logging, mining, and infrastructure development.",
@@ -128,28 +128,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     drivers: [
       {
         icon: "sprout",
-        image: "/images/issues/Agricultural_Expansion.jpg",
+        image: "/images/issues/Agricultural_Expansion.jpg",//https://id.wikipedia.org/wiki/Pertanian
         title: "Agricultural Expansion",
         description:
           "Conversion of forests into plantations such as oil palm, acacia, and other crops.",
       },
       {
         icon: "axe",
-        image: "/images/issues/Illegal_Logging.jpg",
+        image: "/images/issues/Illegal_Logging.jpg",//https://id.wikipedia.org/wiki/Pembalakan_liar
         title: "Logging",
         description:
           "Legal and illegal logging continue to reduce forest cover.",
       },
       {
         icon: "pickaxe",
-        image: "/images/issues/Mining.jpg",
+        image: "/images/issues/Mining.jpg",//https://id.wikipedia.org/wiki/Pertambangan
         title: "Mining",
         description:
           "Extraction of minerals leads to large-scale forest clearing and habitat loss.",
       },
       {
         icon: "construction",
-        image: "/images/issues/Infrastructure_Development.jpg",
+        image: "/images/issues/Infrastructure_Development.jpg",//https://id.wikipedia.org/wiki/Prasarana
         title: "Infrastructure Development",
         description:
           "Roads, settlements, and other infrastructure open access to forest areas.",
@@ -161,28 +161,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     impacts: [
       {
         icon: "bird",
-        image: "/images/issues/biodiversity.png",
+        image: "/images/issues/biodiversity.png",//https://id.wikipedia.org/wiki/Keanekaragaman_hayati
         title: "Biodiversity",
         description:
           "Habitat loss pushes endemic wildlife toward smaller, isolated populations.",
       },
       {
         icon: "cloud-sun",
-        image: "/images/issues/Climate.jpg",
+        image: "/images/issues/Climate.jpg",//https://id.wikipedia.org/wiki/Perubahan_iklim
         title: "Climate",
         description:
           "Cleared forests release stored carbon and weaken regional climate stability.",
       },
       {
         icon: "tree",
-        image: "/images/issues/Ecosystem.jpg",
+        image: "/images/issues/Ecosystem.jpg",//https://id.wikipedia.org/wiki/Ekosistem
         title: "Ecosystems",
         description:
           "Broken canopies disrupt water cycles, soils, and forest regeneration.",
       },
       {
         icon: "users",
-        image: "/images/issues/Communities.jpg",
+        image: "/images/issues/Communities.jpg",//https://id.wikipedia.org/wiki/Masyarakat
         title: "Communities",
         description:
           "Forest-dependent livelihoods lose resources, protection, and heritage.",
@@ -194,28 +194,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     actions: [
       {
         icon: "shield",
-        image: "/images/issues/Protect_Existing_Forests.jpg",
+        image: "/images/issues/Protect_Existing_Forests.jpg",//https://id.wikipedia.org/wiki/Hutan_lindung
         title: "Protect Existing Forests",
         description:
           "Strengthen forest protection and prevent illegal logging, land conversion, and other harmful activities.",
       },
       {
         icon: "sprout",
-        image: "/images/issues/Restore_Degraded_Land.jpg",
+        image: "/images/issues/Restore_Degraded_Land.jpg",//https://id.wikipedia.org/wiki/Reboisasi
         title: "Restore Degraded Land",
         description:
           "Reforest damaged areas and rehabilitate ecosystems with native vegetation.",
       },
       {
         icon: "recycle",
-        image: "/images/issues/Use_Resources_Responsibly.jpg",
+        image: "/images/issues/Use_Resources_Responsibly.jpg",//https://en.wikipedia.org/wiki/Sustainable_consumption
         title: "Use Resources Responsibly",
         description:
           "Reduce unnecessary consumption and choose products that support sustainable practices.",
       },
       {
         icon: "users",
-        image: "/images/issues/Take_Part_&_Speak%20Up.jpg",
+        image: "/images/issues/Take_Part_&_Speak%20Up.jpg",//https://id.wikipedia.org/wiki/Aktivisme_lingkungan_hidup
         title: "Take Part & Speak Up",
         description:
           "Support conservation initiatives, share reliable information, and encourage action in your community.",
@@ -229,9 +229,9 @@ export const issueDetails: Record<string, IssueDetail> = {
     subtitle: "When Forests Burn, Life Pays the Price",
     description:
       "Recurring forest and land fires — especially on drained peatlands — damage ecosystems, threaten health, and release vast carbon into the atmosphere.",
-    image: "/images/issues/Kebakaran_Hutan.jpg",
+    image: "/images/issues/Kebakaran_Hutan.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
     overviewHeading: "What Are Forest Fires?",
-    video: "/images/issues/Forest_Fire.mp4",
+    video: "/images/issues/Forest_Fire.mp4",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
     videoSourceUrl: "https://youtu.be/5hghT1W33cY?si=4JcVKP2rtWP1oqts",
     stats: [
       { value: "1,437", unit: "", label: "High-confidence hotspots nationwide (14 Sep 2026)" },
@@ -279,28 +279,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     drivers: [
       {
         icon: "flame",
-        image: "/images/issues/Land_Clearing.jpg",
+        image: "/images/issues/Land_Clearing.jpg",//https://id.wikipedia.org/wiki/Peladangan
         title: "Land Clearing",
         description:
           "Fire is still used to clear land cheaply, often escaping into surrounding forest.",
       },
       {
         icon: "droplets",
-        image: "/images/issues/Peatland_Drying.jpg",
+        image: "/images/issues/Peatland_Drying.jpg",//https://id.wikipedia.org/wiki/Gambut
         title: "Peatland Drying",
         description:
           "Drainage canals dry peat domes, turning wet carbon vaults into fuel beds.",
       },
       {
         icon: "sun",
-        image: "/images/issues/Prolonged_Dry_Conditions.jpg",
+        image: "/images/issues/Prolonged_Dry_Conditions.jpg",//https://id.wikipedia.org/wiki/Kekeringan
         title: "Prolonged Dry Conditions",
         description:
           "Extended dry seasons and drought years make ignition far more likely.",
       },
       {
         icon: "alert",
-        image: "/images/issues/Human_Ignition_&_Accidental_Fires.jpg",
+        image: "/images/issues/Human_Ignition_&_Accidental_Fires.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
         title: "Human Ignition & Accidental Fires",
         description:
           "Discarded cigarettes, campfires, and sparks ignite tinder-dry landscapes.",
@@ -312,28 +312,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     impacts: [
       {
         icon: "tree",
-        image: "/images/issues/Habitat_Damage.jpg",
+        image: "/images/issues/Habitat_Damage.jpg",//https://id.wikipedia.org/wiki/Perusakan_habitat
         title: "Habitat Damage",
         description:
           "Burned forests lose canopy, nesting sites, and food sources for years.",
       },
       {
         icon: "wind",
-        image: "/images/issues/Air_Quality.jpg",
+        image: "/images/issues/Air_Quality.jpg",//https://id.wikipedia.org/wiki/Polusi_udara
         title: "Air Quality",
         description:
           "Thick haze disrupts daily life, transport, and schools across the region.",
       },
       {
         icon: "factory",
-        image: "/images/issues/Carbon_Emissions.jpg",
+        image: "/images/issues/Carbon_Emissions.jpg",//https://id.wikipedia.org/wiki/Gas_rumah_kaca
         title: "Carbon Emissions",
         description:
           "Burning peat releases carbon stored over millennia in a matter of weeks.",
       },
       {
         icon: "users",
-        image: "/images/issues/Community_Health.jpg",
+        image: "/images/issues/Community_Health.jpg",//https://id.wikipedia.org/wiki/Kesehatan
         title: "Community Health",
         description:
           "Smoke exposure harms respiratory health, especially in children and the elderly.",
@@ -345,28 +345,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     actions: [
       {
         icon: "shield",
-        image: "/images/issues/Prevent_Open_Burning.jpg",
+        image: "/images/issues/Prevent_Open_Burning.jpg",//https://id.wikipedia.org/wiki/Peladangan
         title: "Prevent Open Burning",
         description:
           "Enforce zero-burning rules and promote fire-free land preparation.",
       },
       {
         icon: "droplets",
-        image: "/images/issues/Keep_Peatlands_Wet.jpg",
+        image: "/images/issues/Keep_Peatlands_Wet.jpg",//https://id.wikipedia.org/wiki/Gambut
         title: "Keep Peatlands Wet",
         description:
           "Block drainage canals and rewet peat domes so they cannot ignite.",
       },
       {
         icon: "bell",
-        image: "/images/issues/Early_Detection.jpg",
+        image: "/images/issues/Early_Detection.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
         title: "Early Detection",
         description:
           "Monitor hotspots and dryness indicators to catch fires before they spread.",
       },
       {
         icon: "users",
-        image: "/images/issues/Community_Response.jpg",
+        image: "/images/issues/Community_Response.jpg",//https://id.wikipedia.org/wiki/Masyarakat
         title: "Community Response",
         description:
           "Train and equip village fire brigades as the first line of defense.",
@@ -380,9 +380,9 @@ export const issueDetails: Record<string, IssueDetail> = {
     subtitle: "When Forests Disappear, Species Follow",
     description:
       "Habitat loss and fragmentation push Indonesia's endemic wildlife toward extinction, unraveling ecosystems built over millions of years.",
-    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",
+    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",//https://id.wikipedia.org/wiki/Keanekaragaman_hayati
     overviewHeading: "What Is Biodiversity Loss?",
-    video: "/images/issues/Biodiversity_loss.mp4",
+    video: "/images/issues/Biodiversity_loss.mp4",//https://id.wikipedia.org/wiki/Keanekaragaman_hayati
     videoSourceUrl: "https://youtu.be/lcNh_ZS3u-k?si=UaQrX5-6agBen-rz",
     stats: [
       { value: ">17%", unit: "", label: "Share of the world's biodiversity held by Indonesia" },
@@ -429,28 +429,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     drivers: [
       {
         icon: "axe",
-        image: "/images/issues/Habitat_Loss.jpg",
+        image: "/images/issues/Habitat_Loss.jpg",//https://id.wikipedia.org/wiki/Perusakan_habitat
         title: "Habitat Loss",
         description:
           "Cleared forests remove the food, shelter, and breeding grounds species need.",
       },
       {
         icon: "alert",
-        image: "/images/issues/Habitat_Fragmentation.jpg",
+        image: "/images/issues/Habitat_Fragmentation.jpg",//https://id.wikipedia.org/wiki/Fragmentasi_habitat
         title: "Habitat Fragmentation",
         description:
           "Broken corridors isolate populations, shrinking gene pools over generations.",
       },
       {
         icon: "gavel",
-        image: "/images/issues/Illegal_Wildlife_Trade.jpeg",
+        image: "/images/issues/Illegal_Wildlife_Trade.jpeg",//https://id.wikipedia.org/wiki/Perdagangan_satwa_liar
         title: "Illegal Wildlife Trade",
         description:
           "Poaching and trafficking target rare species for illegal markets.",
       },
       {
         icon: "cloud-rain",
-        image: "/images/issues/Climate_and_Environmental_Change.jpg",
+        image: "/images/issues/Climate_and_Environmental_Change.jpg",//https://id.wikipedia.org/wiki/Perubahan_iklim
         title: "Climate and Environmental Change",
         description:
           "Shifting seasons and stressed habitats push vulnerable species further.",
@@ -462,28 +462,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     impacts: [
       {
         icon: "mountain",
-        image: "/images/issues/Ecosystem_Stability.jpg",
+        image: "/images/issues/Ecosystem_Stability.jpg",//https://id.wikipedia.org/wiki/Ekosistem
         title: "Ecosystem Stability",
         description:
           "Fewer species means fragile forests less able to recover from shocks.",
       },
       {
         icon: "fish",
-        image: "/images/issues/Food_Webs.jpg",
+        image: "/images/issues/Food_Webs.jpg",//https://id.wikipedia.org/wiki/Jaring-jaring_makanan
         title: "Food Webs",
         description:
           "Missing predators and pollinators cascade through entire food chains.",
       },
       {
         icon: "leaf",
-        image: "/images/issues/Genetic_Diversity.jpg",
+        image: "/images/issues/Genetic_Diversity.jpg",//https://id.wikipedia.org/wiki/Keanekaragaman_genetik
         title: "Genetic Diversity",
         description:
           "Lost populations erase genetic heritage that took millennia to evolve.",
       },
       {
         icon: "users",
-        image: "/images/issues/Communities.jpg",
+        image: "/images/issues/Communities.jpg",//https://id.wikipedia.org/wiki/Masyarakat
         title: "Communities",
         description:
           "Local cultures and livelihoods tied to wildlife lose part of their identity.",
@@ -495,28 +495,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     actions: [
       {
         icon: "shield",
-        image: "/images/issues/Protect_Key_Habitats.jpg",
+        image: "/images/issues/Protect_Key_Habitats.jpg",//https://id.wikipedia.org/wiki/Pelestarian_alam
         title: "Protect Key Habitats",
         description:
           "Keep strongholds like national parks intact, patrolled, and connected.",
       },
       {
         icon: "tree",
-        image: "/images/issues/Restore_Wildlife_Corridors.jpg",
+        image: "/images/issues/Restore_Wildlife_Corridors.jpg",//https://id.wikipedia.org/wiki/Pemulihan_lingkungan
         title: "Restore Wildlife Corridors",
         description:
           "Reconnect fragments so isolated populations can meet and breed.",
       },
       {
         icon: "gavel",
-        image: "/images/issues/Reject_Illegal_Wildlife_Products.jpg",
+        image: "/images/issues/Reject_Illegal_Wildlife_Products.jpg",//https://id.wikipedia.org/wiki/Perdagangan_satwa_liar
         title: "Reject Illegal Wildlife Products",
         description:
           "Refuse to buy trafficked animals and report wildlife crime.",
       },
       {
         icon: "book",
-        image: "/images/issues/Support_Field_Research.jpg",
+        image: "/images/issues/Support_Field_Research.jpg",//https://id.wikipedia.org/wiki/Penelitian
         title: "Support Field Research",
         description:
           "Ranger patrols and scientific monitoring turn data into protection.",
@@ -530,9 +530,9 @@ export const issueDetails: Record<string, IssueDetail> = {
     subtitle: "A Changing Climate, A Vulnerable Forest",
     description:
       "Rising temperatures, shifting rainfall, and extreme weather are reshaping Indonesia's forests — and the forests shape the climate in return.",
-    image: "/images/issues/Climate_change.jpg",
+    image: "/images/issues/Climate_change.jpg",//https://id.wikipedia.org/wiki/Perubahan_iklim
     overviewHeading: "What Is Climate Change?",
-    video: "/images/issues/Climate_Change.mp4",
+    video: "/images/issues/Climate_Change.mp4",//https://id.wikipedia.org/wiki/Perubahan_iklim
     videoSourceUrl: "https://youtu.be/G4H1N_yXBiA?si=VUgqndzs1OlsNhK9",
     stats: [
       { value: "+0.38°C", unit: "", label: "Average temperature anomaly in 2025 (vs 1991–2020 normal)" },
@@ -588,28 +588,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     drivers: [
       {
         icon: "thermometer",
-        image: "/images/issues/Rising_Temperature.jpg",
+        image: "/images/issues/Rising_Temperature.jpg",//https://id.wikipedia.org/wiki/Pemanasan_global
         title: "Rising Temperature",
         description:
           "Steadily climbing average temperatures stress heat-sensitive forest life.",
       },
       {
         icon: "cloud-rain",
-        image: "/images/issues/Changing_Rainfall.jpg",
+        image: "/images/issues/Changing_Rainfall.jpg",//https://id.wikipedia.org/wiki/Kekeringan
         title: "Changing Rainfall",
         description:
           "Wetter wet seasons and drier dry seasons destabilize forest rhythms.",
       },
       {
         icon: "wind",
-        image: "/images/issues/Extreme_Weather.jpg",
+        image: "/images/issues/Extreme_Weather.jpg",//https://id.wikipedia.org/wiki/Cuaca_ekstrem
         title: "Extreme Weather",
         description:
           "Stronger storms, floods, and droughts strike forests more often.",
       },
       {
         icon: "alert",
-        image: "/images/issues/Ecosystem_Stress.jpg",
+        image: "/images/issues/Ecosystem_Stress.jpg",//https://id.wikipedia.org/wiki/Ekosistem
         title: "Ecosystem Stress",
         description:
           "Stressed forests grow slower, burn easier, and recover harder.",
@@ -621,28 +621,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     impacts: [
       {
         icon: "tree",
-        image: "/images/issues/Ecosystem_Changes.jpg",
+        image: "/images/issues/Ecosystem_Changes.jpg",//https://id.wikipedia.org/wiki/Ekosistem
         title: "Ecosystem Changes",
         description:
           "Species ranges shift and forest composition slowly transforms.",
       },
       {
         icon: "waves",
-        image: "/images/issues/Water_Systems.jpg",
+        image: "/images/issues/Water_Systems.jpg",//https://id.wikipedia.org/wiki/Siklus_air
         title: "Water Systems",
         description:
           "Unreliable rains threaten rivers, wetlands, and downstream communities.",
       },
       {
         icon: "bird",
-        image: "/images/issues/Species_Survival.jpg",
+        image: "/images/issues/Species_Survival.jpg",//https://id.wikipedia.org/wiki/Spesies_terancam
         title: "Species Survival",
         description:
           "Endemic wildlife with narrow ranges faces shrinking safe habitat.",
       },
       {
         icon: "users",
-        image: "/images/issues/Communities.jpg",
+        image: "/images/issues/Communities.jpg",//https://id.wikipedia.org/wiki/Masyarakat
         title: "Communities",
         description:
           "Farmers and forest communities bear failed harvests and floods.",
@@ -654,28 +654,28 @@ export const issueDetails: Record<string, IssueDetail> = {
     actions: [
       {
         icon: "factory",
-        image: "/images/issues/Cut_Emissions.jpg",
+        image: "/images/issues/Cut_Emissions.jpg",//https://id.wikipedia.org/wiki/Gas_rumah_kaca
         title: "Cut Emissions",
         description:
           "Reduce fossil fuel use and stop burning forests and peatlands.",
       },
       {
         icon: "tree",
-        image: "/images/issues/Protect_Carbon_Forests.jpg",
+        image: "/images/issues/Protect_Carbon_Forests.jpg",//https://id.wikipedia.org/wiki/Hutan_lindung
         title: "Protect Carbon Forests",
         description:
           "Keep peat swamps and old-growth forests standing as carbon vaults.",
       },
       {
         icon: "sun",
-        image: "/images/issues/Climate-Smart_Villages.jpg",
+        image: "/images/issues/Climate-Smart_Villages.jpg",//https://id.wikipedia.org/wiki/Adaptasi_perubahan_iklim
         title: "Climate-Smart Villages",
         description:
           "Support livelihoods adapted to new climate realities.",
       },
       {
         icon: "book",
-        image: "/images/issues/Share_Knowledge.png",
+        image: "/images/issues/Share_Knowledge.png",//https://id.wikipedia.org/wiki/Pendidikan_lingkungan_hidup
         title: "Share Knowledge",
         description:
           "Spread reliable climate information within your community.",

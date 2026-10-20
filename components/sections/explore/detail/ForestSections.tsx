@@ -6,24 +6,45 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { Forest } from "@/types";
 import type { ForestDetail } from "@/data/forestDetails";
 import { speciesDescriptions } from "@/data/forestDetails";
+import {
+  ecosystemDescriptionsId,
+  islandLabelsId,
+  speciesDescriptionsId,
+} from "@/data/forestDetails.id";
+import { useLanguage } from "@/lib/i18n";
+import { translateForest } from "@/lib/translate";
+import { translateForestDetail } from "@/lib/translateDetail";
 
 /* ---------------- Forest Profile ---------------- */
 
-export function ForestProfile({ detail }: { detail: ForestDetail }) {
+export function ForestProfile({
+  forestId,
+  detail,
+}: {
+  forestId: string;
+  detail: ForestDetail;
+}) {
+  const { dict, language } = useLanguage();
+  const text = dict.explore.detail.profile;
+  const localizedDetail = useMemo(
+    () => translateForestDetail(forestId, detail, language),
+    [forestId, detail, language]
+  );
+
   return (
     <section className="section-padding bg-bg-page relative overflow-hidden">
       <div className="mx-auto max-w-[1200px]">
         <AnimatedSection>
           <p className="mb-2 flex items-center gap-2 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
             <span className="h-px w-6 bg-[#DDEA81]/60" />
-            Forest Profile
+            {text.eyebrow}
           </p>
           <h2 className="max-w-2xl font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-4xl">
-            {detail.profileHeading}
+            {localizedDetail.profileHeading}
           </h2>
         </AnimatedSection>
         <div className="mt-6 grid max-w-4xl gap-4 md:grid-cols-2 md:gap-8">
-          {detail.profile.slice(0, 2).map((paragraph, i) => (
+          {localizedDetail.profile.slice(0, 2).map((paragraph, i) => (
             <AnimatedSection key={i} delay={0.1 + i * 0.1}>
               <p className="text-sm font-body leading-relaxed text-[#F4F0E8]/75">
                 {paragraph}
@@ -31,7 +52,7 @@ export function ForestProfile({ detail }: { detail: ForestDetail }) {
             </AnimatedSection>
           ))}
         </div>
-        {detail.profile.slice(2).map((paragraph, i) => (
+        {localizedDetail.profile.slice(2).map((paragraph, i) => (
           <AnimatedSection key={`extra-${i}`} delay={0.25}>
             <p className="mt-4 max-w-3xl text-sm font-body leading-relaxed text-[#F4F0E8]/75">
               {paragraph}
@@ -52,14 +73,39 @@ export function ForestGlance({
   forest: Forest;
   detail: ForestDetail;
 }) {
+  const { dict, language } = useLanguage();
+  const text = dict.explore.detail.glance;
+  const localizedForest = translateForest(dict, forest);
+  const localizedDetail = translateForestDetail(
+    forest.id,
+    detail,
+    language
+  );
+  const island =
+    language === "id" ? islandLabelsId[detail.island] : detail.island;
+
   const items = [
-    { label: "Location", value: forest.location },
-    { label: "Region", value: `${detail.province} · ${detail.island}` },
-    { label: "Forest Type", value: forest.ecosystem },
-    { label: "Protection Status", value: detail.designation },
-    { label: "Total Area", value: forest.area },
-    ...(detail.elevation
-      ? [{ label: "Elevation", value: `${detail.elevation} ASL` }]
+    { label: text.location, value: localizedForest.location },
+    {
+      label: text.region,
+      value: `${localizedDetail.province} · ${island}`,
+    },
+    { label: text.forestType, value: localizedForest.ecosystem },
+    {
+      label: text.protectionStatus,
+      value: localizedDetail.designation,
+    },
+    { label: text.totalArea, value: localizedForest.area },
+    ...(localizedDetail.elevation
+      ? [
+          {
+            label: text.elevation,
+            value:
+              language === "id"
+                ? localizedDetail.elevation
+                : `${localizedDetail.elevation} ASL`,
+          },
+        ]
       : []),
   ];
 
@@ -68,10 +114,10 @@ export function ForestGlance({
       <div className="mx-auto max-w-[1200px]">
         <AnimatedSection>
           <p className="mb-2 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-            Geographic &amp; Biological Metadata
+            {text.eyebrow}
           </p>
           <h2 className="font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-4xl">
-            At a Glance
+            {text.title}
           </h2>
         </AnimatedSection>
         <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-7 md:grid-cols-3">
@@ -93,7 +139,7 @@ export function ForestGlance({
 
 /* Short, general descriptions per ecosystem type (shared across forests). */
 
-const ecosystemDescriptions: Record<string, string> = {
+const ecosystemDescriptionsEn: Record<string, string> = {
   "Lowland Rainforest":
     "Dense evergreen forest of the plains, the most species-rich layer where dipterocarp giants tower over a dark, humid understory.",
   "Montane Rainforest":
@@ -151,76 +197,102 @@ export function EcosystemLife({
   forest: Forest;
   detail: ForestDetail;
 }) {
+  const { dict, language } = useLanguage();
+  const text = dict.explore.detail.ecosystem;
+  const localizedForest = useMemo(
+    () => translateForest(dict, forest),
+    [dict, forest]
+  );
+  const localizedDetail = useMemo(
+    () => translateForestDetail(forest.id, detail, language),
+    [forest.id, detail, language]
+  );
+  const speciesText =
+    language === "id" ? speciesDescriptionsId : speciesDescriptions;
+  const ecosystemText =
+    language === "id"
+      ? ecosystemDescriptionsId
+      : ecosystemDescriptionsEn;
+
   const slides = useMemo(() => {
     const list: { image: string; label: string; title: string; note: string }[] = [];
     /* Every documented species gets a card; species without photos
        render an elegant empty card instead of being skipped. */
-    forest.biodiversity.forEach((b) =>
+    forest.biodiversity.forEach((b, index) => {
+      const localized =
+        localizedForest.biodiversity[index] ?? b;
       list.push({
         image: b.image,
-        label: "Key Indicator Species",
-        title: `${b.name} (${b.scientificName})`,
-        note:
-          speciesDescriptions[b.name] ?? "A documented resident of this forest.",
-      })
-    );
+        label: text.keySpecies,
+        title: `${localized.name} (${b.scientificName})`,
+        note: speciesText[b.name] ?? text.documentedResident,
+      });
+    });
     if (forest.image) {
       list.push({
         image: forest.image,
-        label: "The Living Landscape",
-        title: forest.name,
-        note: forest.ecosystem,
+        label: text.livingLandscape,
+        title: localizedForest.name,
+        note: localizedForest.ecosystem,
       });
     }
     return list;
-  }, [forest]);
+  }, [forest, localizedForest, speciesText, text]);
 
   const blocks: StoryBlock[] = useMemo(() => {
     const faunaBody = forest.biodiversity
       .slice(0, 2)
-      .map((b) => speciesDescriptions[b.name] ?? "A documented resident of this forest.")
+      .map((b) => speciesText[b.name] ?? text.documentedResident)
       .join(" ");
     const result: StoryBlock[] = [
       {
-        eyebrow: "Keystone Fauna",
+        eyebrow: text.keystoneFauna,
         title:
-          forest.biodiversity
+          localizedForest.biodiversity
             .slice(0, 3)
             .map((b) => b.name)
-            .join(" · ") || "Documented Wildlife",
+            .join(" · ") || text.documentedWildlife,
         body: faunaBody,
       },
       {
-        eyebrow: "Flora & Forest Architecture",
+        eyebrow: text.floraArchitecture,
         title:
-          detail.flora.length > 0
-            ? detail.flora
+          localizedDetail.flora.length > 0
+            ? localizedDetail.flora
                 .slice(0, 3)
                 .map((f) => f.name)
                 .join(" · ")
-            : "Canopy Architecture",
+            : text.canopyArchitecture,
         body:
-          detail.flora.length > 0
-            ? detail.flora
+          localizedDetail.flora.length > 0
+            ? localizedDetail.flora
                 .slice(0, 2)
                 .map((f) => f.description)
                 .join(" ")
-            : "Flora documentation for this forest is still being compiled by KARIMBA.",
+            : text.floraPending,
       },
       {
-        eyebrow: "Ecosystem",
-        title: detail.ecosystems.join(" · "),
+        eyebrow: text.ecosystem,
+        title: localizedDetail.ecosystems.join(" · "),
         body: detail.ecosystems
           .map(
             (eco) =>
-              ecosystemDescriptions[eco] ??
-              "A living system of this forest, sustaining its wildlife, water, and climate."
+              ecosystemText[eco] ??
+              text.ecosystemFallback
           )
           .join(" "),
       },
     ];
     return result;
-  }, [forest, detail]);
+  }, [
+    forest,
+    localizedForest,
+    localizedDetail,
+    detail,
+    speciesText,
+    ecosystemText,
+    text,
+  ]);
 
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
@@ -250,14 +322,13 @@ export function EcosystemLife({
       <div className="mx-auto max-w-[1200px]">
         <AnimatedSection>
           <p className="mb-2 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-            Canopy Dynamics &amp; Keystone Species
+            {text.eyebrow}
           </p>
           <h2 className="max-w-3xl font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-4xl">
-            Ecosystem &amp; Life Within the Forest
+            {text.title}
           </h2>
           <p className="mt-3 max-w-2xl text-xs font-body text-[#F4F0E8]/60 md:text-sm">
-            Discover the intricate connections between wildlife, vegetation, and
-            the natural systems that sustain life within the forest.
+            {text.subtitle}
           </p>
         </AnimatedSection>
 
@@ -286,7 +357,7 @@ export function EcosystemLife({
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#1E3420] via-[#2A1D12] to-[#101A12]">
                         <Leaf size={30} className="text-[#DDEA81]/40" />
                         <span className="text-[10px] font-body uppercase tracking-[0.3em] text-[#F4F0E8]/45">
-                          Image coming soon
+                          {text.imageComingSoon}
                         </span>
                       </div>
                     )}
@@ -310,7 +381,7 @@ export function EcosystemLife({
               {slides.length > 1 && index > 0 && (
                 <button
                   onClick={goPrev}
-                  aria-label="Previous showcase image"
+                  aria-label={text.previousImage}
                   className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(244,240,232,0.35)] bg-black/45 text-[#F4F0E8] backdrop-blur-sm transition-all hover:border-[#DDEA81] hover:text-[#DDEA81]"
                 >
                   <ArrowLeft size={16} />
@@ -319,7 +390,7 @@ export function EcosystemLife({
               {slides.length > 1 && index < slides.length - 1 && (
                 <button
                   onClick={goNext}
-                  aria-label="Next showcase image"
+                  aria-label={text.nextImage}
                   className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(244,240,232,0.35)] bg-black/45 text-[#F4F0E8] backdrop-blur-sm transition-all hover:border-[#DDEA81] hover:text-[#DDEA81]"
                 >
                   <ArrowRight size={16} />

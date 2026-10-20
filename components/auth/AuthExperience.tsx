@@ -27,6 +27,7 @@ function ImagePanel({ mode }: { mode: Mode }) {
         mode === "register" ? "lg:translate-x-full" : "lg:translate-x-0"
       )}
     >
+      {/* Source: https://id.wikipedia.org/wiki/Taman_Nasional_Gunung_Rinjani */}
       <img
         src="/images/forests/Taman_Nasional_Gunung_Rinjani.jpg"
         alt=""

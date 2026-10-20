@@ -17,32 +17,32 @@ export const forests: Forest[] = [
         scientificName: "Pongo abelii",
         habitat: "Tropical Rainforest",
         role: "Forest Engineer",
-        image: "/images/animals/Orangutan.jpg",
+        image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
       },
       {
         name: "Sumatran Tiger",
         scientificName: "Panthera tigris sumatrae",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Harimau_Sumatera.jpg",
+        image: "/images/animals/Harimau_Sumatera.jpg",//https://id.wikipedia.org/wiki/Harimau_sumatra
       },
       {
         name: "Sumatran Elephant",
         scientificName: "Elephas maximus sumatranus",
         habitat: "Tropical Rainforest",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Gajah_Sumatera.jpg",
+        image: "/images/animals/Gajah_Sumatera.jpg",//https://id.wikipedia.org/wiki/Gajah_sumatra
       },
       {
         name: "Siamang",
         scientificName: "Symphalangus syndactylus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Siamang.jpg",
+        image: "/images/animals/Siamang.jpg",//https://id.wikipedia.org/wiki/Siamang
       },
     ],
     threats: ["Deforestation", "Poaching", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Gunung_Leuser.jpg",
+    image: "/images/forests/Taman_Nasional_Gunung_Leuser.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Gunung_Leuser
   },
   {
     id: "kerinci-seblat",
@@ -60,32 +60,32 @@ export const forests: Forest[] = [
         scientificName: "Panthera tigris sumatrae",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Harimau_Sumatera.jpg",
+        image: "/images/animals/Harimau_Sumatera.jpg",//https://id.wikipedia.org/wiki/Harimau_sumatra
       },
       {
         name: "Sumatran Rhinoceros",
         scientificName: "Dicerorhinus sumatrensis",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Badak_Sumatra.jpg",
+        image: "/images/animals/Badak_Sumatra.jpg",//https://id.wikipedia.org/wiki/Badak_sumatra
       },
       {
         name: "Sumatran Striped Rabbit",
         scientificName: "Nesolagus netscheri",
         habitat: "Montane Rainforest",
         role: "Grazing Herbivore",
-        image: "/images/animals/Sumatran_Striped_Rabbit.jpg",
+        image: "/images/animals/Sumatran_Striped_Rabbit.jpg",//https://id.wikipedia.org/wiki/Kelinci_sumatra
       },
       {
         name: "Asian Tapir",
         scientificName: "Tapirus indicus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Tapir.jpg",
+        image: "/images/animals/Tapir.jpg",//https://id.wikipedia.org/wiki/Tapir_asia
       },
     ],
     threats: ["Illegal logging", "Poaching", "Climate change"],
-    image: "/images/forests/Bukit_Impian_Taman_Nasional_Kerinci_Seblat.jpg",
+    image: "/images/forests/Bukit_Impian_Taman_Nasional_Kerinci_Seblat.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Kerinci_Seblat
   },
   {
     id: "tanjung-puting",
@@ -103,32 +103,32 @@ export const forests: Forest[] = [
         scientificName: "Pongo pygmaeus",
         habitat: "Peat Swamp",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Orangutan.jpg",
+        image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
       },
       {
         name: "Bekantan",
         scientificName: "Nasalis larvatus",
         habitat: "Mangrove Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Bekantan.jpeg",
+        image: "/images/animals/Bekantan.jpeg",//https://id.wikipedia.org/wiki/Bekantan
       },
       {
         name: "Storm's Stork",
         scientificName: "Ciconia stormi",
         habitat: "Peat Swamp",
         role: "Wetland Hunter",
-        image: "/images/animals/Storm's_Stork.jpg",
+        image: "/images/animals/Storm's_Stork.jpg",//https://id.wikipedia.org/wiki/Bangau_Hutan_Rawa
       },
       {
         name: "False Gharial",
         scientificName: "Tomistoma schlegelii",
         habitat: "Peat Swamp",
         role: "Top Predator",
-        image: "/images/animals/Buaya_Palsu.jpg",
+        image: "/images/animals/Buaya_Palsu.jpg",//https://id.wikipedia.org/wiki/Senyulong
       },
     ],
     threats: ["Forest fires", "Deforestation", "Mining"],
-    image: "/images/forests/Taman_Nasional_Tanjung_Puting.png",
+    image: "/images/forests/Taman_Nasional_Tanjung_Puting.png",//https://id.wikipedia.org/wiki/Taman_Nasional_Tanjung_Puting
   },
   {
     id: "sebangau",
@@ -146,32 +146,32 @@ export const forests: Forest[] = [
         scientificName: "Pongo pygmaeus",
         habitat: "Peat Swamp",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Orangutan.jpg",
+        image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
       },
       {
         name: "Bornean Bear",
         scientificName: "Helarctos malayanus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Beruang_Madu.jpg",
+        image: "/images/animals/Beruang_Madu.jpg",//https://id.wikipedia.org/wiki/Beruang_madu
       },
       {
         name: "Agile Gibbon",
         scientificName: "Hylobates agilis",
         habitat: "Peat Swamp",
         role: "Seed Disperser",
-        image: "/images/animals/Agile_Gibbon.jpg",
+        image: "/images/animals/Agile_Gibbon.jpg",//https://id.wikipedia.org/wiki/Owa_ungko
       },
       {
         name: "Rhinoceros Hornbill",
         scientificName: "Buceros rhinoceros",
         habitat: "Peat Swamp",
         role: "Seed Disperser",
-        image: "/images/animals/Rhinoceros_Hornbill.jpg",
+        image: "/images/animals/Rhinoceros_Hornbill.jpg",//https://id.wikipedia.org/wiki/Rangkong_badak
       },
     ],
     threats: ["Peat fires", "Drainage", "Deforestation"],
-    image: "/images/forests/Taman_Nasional_Sebangau.jpg",
+    image: "/images/forests/Taman_Nasional_Sebangau.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Sebangau
   },
   {
     id: "lorentz",
@@ -189,32 +189,32 @@ export const forests: Forest[] = [
         scientificName: "Paradisaeidae",
         habitat: "Tropical Forest",
         role: "Forest Guardian",
-        image: "/images/animals/Cenderawasih.jpg",
+        image: "/images/animals/Cenderawasih.jpg",//https://id.wikipedia.org/wiki/Cenderawasih
       },
       {
         name: "Doria's tree-kangaroo",
         scientificName: "Dendrolagus dorianus",
         habitat: "Mountainous Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Kanguru_Doria.jpg",
+        image: "/images/animals/Kanguru_Doria.jpg",//https://en.wikipedia.org/wiki/Doria%27s_tree-kangaroo
       },
       {
         name: "Southern Cassowary",
         scientificName: "Casuarius casuarius",
         habitat: "Tropical Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Southern_Cassowary.jpg",
+        image: "/images/animals/Southern_Cassowary.jpg",//https://id.wikipedia.org/wiki/Kasuari_gelambir_ganda
       },
       {
         name: "Dingiso",
         scientificName: "Dendrolagus mbaiso",
         habitat: "Mountainous Forest",
         role: "Canopy Browser",
-        image: "/images/animals/Dingiso.jpg",
+        image: "/images/animals/Dingiso.jpg",//https://id.wikipedia.org/wiki/Kanguru_pohon_mbaiso
       },
     ],
     threats: ["Climate change", "Agricultural expansion", "Mining"],
-    image: "/images/forests/Taman_Nasional_Lorentz.jpeg",
+    image: "/images/forests/Taman_Nasional_Lorentz.jpeg",//https://id.wikipedia.org/wiki/Taman_Nasional_Lorentz
   },
   {
     id: "way-kambas",
@@ -232,32 +232,32 @@ export const forests: Forest[] = [
         scientificName: "Rhinoceros sondaicus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Badak_Jawa.jpg",
+        image: "/images/animals/Badak_Jawa.jpg",//https://id.wikipedia.org/wiki/Badak_jawa
       },
       {
         name: "Sumatran Elephant",
         scientificName: "Elephas maximus sumatranus",
         habitat: "Tropical Rainforest",
         role: "Ecosystem Controller",
-        image: "/images/animals/Gajah_Sumatera.jpg",
+        image: "/images/animals/Gajah_Sumatera.jpg",//https://id.wikipedia.org/wiki/Gajah_sumatra
       },
       {
         name: "Sumatran Tiger",
         scientificName: "Panthera tigris sumatrae",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Harimau_Sumatera.jpg",
+        image: "/images/animals/Harimau_Sumatera.jpg",//https://id.wikipedia.org/wiki/Harimau_sumatra
       },
       {
         name: "White-winged Duck",
         scientificName: "Asarcornis scutulata",
         habitat: "Freshwater Swamp",
         role: "Wetland Forager",
-        image: "/images/animals/White-winged_duck.jpg",
+        image: "/images/animals/White-winged_duck.jpg",//https://id.wikipedia.org/wiki/Mentok_rimba
       },
     ],
     threats: ["Poaching", "Deforestation", "Human-elephant conflict"],
-    image: "/images/forests/Taman_Nasional_Way_Kambas.jpg",
+    image: "/images/forests/Taman_Nasional_Way_Kambas.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Way_Kambas
   },
   {
     id: "gunung-leuser",
@@ -275,32 +275,32 @@ export const forests: Forest[] = [
         scientificName: "Pongo abelii",
         habitat: "Tropical Rainforest",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Orangutan.jpg",
+        image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
       },
       {
         name: "Sumatran Tiger",
         scientificName: "Panthera tigris sumatrae",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Harimau_Sumatera.jpg",
+        image: "/images/animals/Harimau_Sumatera.jpg",//https://id.wikipedia.org/wiki/Harimau_sumatra
       },
       {
         name: "Siamang",
         scientificName: "Symphalangus syndactylus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Siamang.jpg",
+        image: "/images/animals/Siamang.jpg",//https://id.wikipedia.org/wiki/Siamang
       },
       {
         name: "Rhinoceros Hornbill",
         scientificName: "Buceros rhinoceros",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Rhinoceros_Hornbill.jpg",
+        image: "/images/animals/Rhinoceros_Hornbill.jpg",//https://id.wikipedia.org/wiki/Rangkong_badak
       },
     ],
     threats: ["Illegal logging", "Poaching", "Mining"],
-    image: "/images/forests/Gunung_Leuser.jpg",
+    image: "/images/forests/Gunung_Leuser.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Gunung_Leuser
   },
   {
     id: "ujung-kulon",
@@ -318,32 +318,32 @@ export const forests: Forest[] = [
         scientificName: "Rhinoceros sondaicus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Badak_Jawa.jpg",
+        image: "/images/animals/Badak_Jawa.jpg",//https://id.wikipedia.org/wiki/Badak_jawa
       },
       {
         name: "Javan Gibbon",
         scientificName: "Hylobates moloch",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Javan_Gibbon.jpg",
+        image: "/images/animals/Javan_Gibbon.jpg",//https://id.wikipedia.org/wiki/Owa_jawa
       },
       {
         name: "Banteng",
         scientificName: "Bos javanicus",
         habitat: "Tropical Rainforest",
         role: "Grazing Herbivore",
-        image: "/images/animals/Banteng.jpg",
+        image: "/images/animals/Banteng.jpg",//https://id.wikipedia.org/wiki/Banteng
       },
       {
         name: "Javan Leopard",
         scientificName: "Panthera pardus melas",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Javan_Leopard.jpg",
+        image: "/images/animals/Javan_Leopard.jpg",//https://id.wikipedia.org/wiki/Macan_tutul_jawa
       },
     ],
     threats: ["Poaching", "Habitat loss", "Natural disasters"],
-    image: "/images/forests/Taman_Nasional_Ujung_Kulon.jpg",
+    image: "/images/forests/Taman_Nasional_Ujung_Kulon.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Ujung_Kulon
   },
   {
     id: "bromo-tengger-semeru",
@@ -361,25 +361,25 @@ export const forests: Forest[] = [
         scientificName: "Panthera pardus melas",
         habitat: "Montane Forest",
         role: "Top Predator",
-        image: "/images/animals/Javan_Leopard.jpg",
+        image: "/images/animals/Javan_Leopard.jpg",//https://id.wikipedia.org/wiki/Macan_tutul_jawa
       },
       {
         name: "Javan Hawk-Eagle",
         scientificName: "Nisaetus bartelsi",
         habitat: "Montane Forest",
         role: "Top Predator",
-        image: "/images/animals/Javan_Hawk-Eagle.jpg",
+        image: "/images/animals/Javan_Hawk-Eagle.jpg",//https://id.wikipedia.org/wiki/Elang_jawa
       },
       {
         name: "Long-tailed Macaque",
         scientificName: "Macaca fascicularis",
         habitat: "Montane Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Long-tailed_Macaque.jpg",
+        image: "/images/animals/Long-tailed_Macaque.jpg",//https://id.wikipedia.org/wiki/Monyet_ekor_panjang
       },
     ],
     threats: ["Tourism pressure", "Forest fires", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Bromo_Tengger_Semeru.jpg",
+    image: "/images/forests/Taman_Nasional_Bromo_Tengger_Semeru.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Bromo_Tengger_Semeru
   },
   {
     id: "baluran",
@@ -397,32 +397,32 @@ export const forests: Forest[] = [
         scientificName: "Bos javanicus",
         habitat: "Savanna",
         role: "Grazing Herbivore",
-        image: "/images/animals/Banteng.jpg",
+        image: "/images/animals/Banteng.jpg",//https://id.wikipedia.org/wiki/Banteng
       },
       {
         name: "Green Peafowl",
         scientificName: "Pavo muticus",
         habitat: "Savanna",
         role: "Seed Disperser",
-        image: "/images/animals/Green_Peafowl.jpg",
+        image: "/images/animals/Green_Peafowl.jpg",//https://id.wikipedia.org/wiki/Merak_hijau
       },
       {
         name: "Javan Leopard",
         scientificName: "Panthera pardus melas",
         habitat: "Savanna",
         role: "Top Predator",
-        image: "/images/animals/Javan_Leopard.jpg",
+        image: "/images/animals/Javan_Leopard.jpg",//https://id.wikipedia.org/wiki/Macan_tutul_jawa
       },
       {
         name: "Dhole",
         scientificName: "Cuon alpinus",
         habitat: "Savanna",
         role: "Top Predator",
-        image: "/images/animals/Dhole.jpg",
+        image: "/images/animals/Dhole.jpg",//https://id.wikipedia.org/wiki/Ajak
       },
     ],
     threats: ["Invasive species", "Poaching", "Forest fires"],
-    image: "/images/forests/Taman_Nasional_Baluran.png",
+    image: "/images/forests/Taman_Nasional_Baluran.png",//https://id.wikipedia.org/wiki/Taman_Nasional_Baluran
   },
   {
     id: "gede-pangrango",
@@ -440,32 +440,32 @@ export const forests: Forest[] = [
         scientificName: "Hylobates moloch",
         habitat: "Montane Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Javan_Gibbon.jpg",
+        image: "/images/animals/Javan_Gibbon.jpg",//https://id.wikipedia.org/wiki/Owa_jawa
       },
       {
         name: "Javan Hawk-Eagle",
         scientificName: "Nisaetus bartelsi",
         habitat: "Montane Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Javan_Hawk-Eagle.jpg",
+        image: "/images/animals/Javan_Hawk-Eagle.jpg",//https://id.wikipedia.org/wiki/Elang_jawa
       },
       {
         name: "Javan Surili",
         scientificName: "Presbytis comata",
         habitat: "Montane Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Javan_Surili.jpg",
+        image: "/images/animals/Javan_Surili.jpg",//https://id.wikipedia.org/wiki/Surili_jawa
       },
       {
         name: "Javan Trogon",
         scientificName: "Apalharpactes reinwardtii",
         habitat: "Montane Rainforest",
         role: "Pest Controller",
-        image: "/images/animals/Javan_Trogon.jpg",
+        image: "/images/animals/Javan_Trogon.jpg",//https://id.wikipedia.org/wiki/Luntur_jawa
       },
     ],
     threats: ["Tourism pressure", "Illegal logging", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Gunung_Gede_Pangrango.jpg",
+    image: "/images/forests/Taman_Nasional_Gunung_Gede_Pangrango.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Gunung_Gede_Pangrango
   },
   {
     id: "betung-kerihun",
@@ -483,32 +483,32 @@ export const forests: Forest[] = [
         scientificName: "Pongo pygmaeus",
         habitat: "Tropical Rainforest",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Orangutan.jpg",
+        image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
       },
       {
         name: "Sunda Clouded Leopard",
         scientificName: "Neofelis diardi",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Sunda_Clouded_Leopard.jpg",
+        image: "/images/animals/Sunda_Clouded_Leopard.jpg",//https://id.wikipedia.org/wiki/Macan_dahan_sunda
       },
       {
         name: "Helmeted Hornbill",
         scientificName: "Rhinoplax vigil",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Helmeted_Hornbill.jpg",
+        image: "/images/animals/Helmeted_Hornbill.jpg",//https://id.wikipedia.org/wiki/Enggang_gading
       },
       {
         name: "Maroon Langur",
         scientificName: "Presbytis rubicunda",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Maroon_Langur.jpg",
+        image: "/images/animals/Maroon_Langur.jpg",//https://id.wikipedia.org/wiki/Lutung_merah
       },
     ],
     threats: ["Illegal logging", "Poaching", "Mining"],
-    image: "/images/forests/Taman_Nasional_Betung_Kerihun.jpeg",
+    image: "/images/forests/Taman_Nasional_Betung_Kerihun.jpeg",//https://id.wikipedia.org/wiki/Taman_Nasional_Betung_Kerihun
   },
   {
     id: "kayan-mentarang",
@@ -526,32 +526,32 @@ export const forests: Forest[] = [
         scientificName: "Pongo pygmaeus",
         habitat: "Tropical Rainforest",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Orangutan.jpg",
+        image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
       },
       {
         name: "Helmeted Hornbill",
         scientificName: "Rhinoplax vigil",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Helmeted_Hornbill.jpg",
+        image: "/images/animals/Helmeted_Hornbill.jpg",//https://id.wikipedia.org/wiki/Enggang_gading
       },
       {
         name: "Sunda Clouded Leopard",
         scientificName: "Neofelis diardi",
         habitat: "Tropical Rainforest",
         role: "Top Predator",
-        image: "/images/animals/Sunda_Clouded_Leopard.jpg",
+        image: "/images/animals/Sunda_Clouded_Leopard.jpg",//https://id.wikipedia.org/wiki/Macan_dahan_sunda
       },
       {
         name: "Müller's Bornean Gibbon",
         scientificName: "Hylobates muelleri",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Müller's_Bornean_Gibbon.jpg",
+        image: "/images/animals/Müller's_Bornean_Gibbon.jpg",//https://id.wikipedia.org/wiki/Owa_kalawat
       },
     ],
     threats: ["Illegal logging", "Poaching", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Kayan_Mentarang.jpg",
+    image: "/images/forests/Taman_Nasional_Kayan_Mentarang.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Kayan_Mentarang
   },
   {
     id: "lore-lindu",
@@ -569,32 +569,32 @@ export const forests: Forest[] = [
         scientificName: "Bubalus depressicornis",
         habitat: "Montane Rainforest",
         role: "Grazing Herbivore",
-        image: "/images/animals/Anoa.jpg",
+        image: "/images/animals/Anoa.jpg",//https://id.wikipedia.org/wiki/Anoa
       },
       {
         name: "Maleo",
         scientificName: "Macrocephalon maleo",
         habitat: "Tropical Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Maleo.jpeg",
+        image: "/images/animals/Maleo.jpeg",//https://id.wikipedia.org/wiki/Maleo_senkawor
       },
       {
         name: "Babirusa",
         scientificName: "Babyrousa celebensis",
         habitat: "Montane Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Babirusa.jpg",
+        image: "/images/animals/Babirusa.jpg",//https://id.wikipedia.org/wiki/Babi_rusa
       },
       {
         name: "Spectral Tarsier",
         scientificName: "Tarsius tarsier",
         habitat: "Montane Rainforest",
         role: "Pest Controller",
-        image: "/images/animals/Spectral_Tarsier.jpg",
+        image: "/images/animals/Spectral_Tarsier.jpg",//https://id.wikipedia.org/wiki/Tarsius_tarsier
       },
     ],
     threats: ["Poaching", "Illegal logging", "Agricultural expansion"],
-    image: "/images/forests/Taman_Nasional_Lore_Lindu.jpg",
+    image: "/images/forests/Taman_Nasional_Lore_Lindu.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Lore_Lindu
   },
   {
     id: "bogani-nani-wartabone",
@@ -612,32 +612,32 @@ export const forests: Forest[] = [
         scientificName: "Macaca nigra",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Celebes_Crested_Macaque.jpg",
+        image: "/images/animals/Celebes_Crested_Macaque.jpg",//https://id.wikipedia.org/wiki/Yaki
       },
       {
         name: "Maleo",
         scientificName: "Macrocephalon maleo",
         habitat: "Tropical Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Maleo.jpeg",
+        image: "/images/animals/Maleo.jpeg",//https://id.wikipedia.org/wiki/Maleo_senkawor
       },
       {
         name: "Lowland Anoa",
         scientificName: "Bubalus depressicornis",
         habitat: "Tropical Rainforest",
         role: "Grazing Herbivore",
-        image: "/images/animals/Lowland_Anoa.jpg",
+        image: "/images/animals/Lowland_Anoa.jpg",//https://id.wikipedia.org/wiki/Anoa_dataran_rendah
       },
       {
         name: "Sulawesi Bear Cuscus",
         scientificName: "Ailurops ursinus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Sulawesi_Bear_Cuscus.jpg",
+        image: "/images/animals/Sulawesi_Bear_Cuscus.jpg",//https://id.wikipedia.org/wiki/Bubutu
       },
     ],
     threats: ["Poaching", "Illegal logging", "Mining"],
-    image: "/images/forests/Taman_Nasional_Borgani_Nani_Wartabone.jpeg",
+    image: "/images/forests/Taman_Nasional_Borgani_Nani_Wartabone.jpeg",//https://id.wikipedia.org/wiki/Taman_Nasional_Bogani_Nani_Wartabone
   },
   {
     id: "bantimurung",
@@ -655,32 +655,32 @@ export const forests: Forest[] = [
         scientificName: "Papilio blumei",
         habitat: "Tropical Forest",
         role: "Pollinator",
-        image: "/images/animals/Blume's_Swallowtail.jpg",
+        image: "/images/animals/Blume's_Swallowtail.jpg",//https://en.wikipedia.org/wiki/Papilio_blumei
       },
       {
         name: "Sulawesi Bear Cuscus",
         scientificName: "Ailurops ursinus",
         habitat: "Tropical Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Sulawesi_Bear_Cuscus.jpg",
+        image: "/images/animals/Sulawesi_Bear_Cuscus.jpg",//https://id.wikipedia.org/wiki/Bubutu
       },
       {
         name: "Moor Macaque",
         scientificName: "Macaca maura",
         habitat: "Tropical Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Moor_Macaque.jpg",
+        image: "/images/animals/Moor_Macaque.jpg",//https://id.wikipedia.org/wiki/Monyet_darre
       },
       {
         name: "Knobbed Hornbill",
         scientificName: "Rhyticeros cassidix",
         habitat: "Tropical Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Knobbed_Hornbill.jpg",
+        image: "/images/animals/Knobbed_Hornbill.jpg",//https://id.wikipedia.org/wiki/Julang_sulawesi
       },
     ],
     threats: ["Habitat loss", "Tourism pressure", "Poaching"],
-    image: "/images/forests/Taman_Nasional_Bantimurung_Bulusaraung.jpg",
+    image: "/images/forests/Taman_Nasional_Bantimurung_Bulusaraung.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Bantimurung_Bulusaraung
   },
   {
     id: "rawa-aopa",
@@ -698,25 +698,25 @@ export const forests: Forest[] = [
         scientificName: "Bubalus depressicornis",
         habitat: "Savanna",
         role: "Grazing Herbivore",
-        image: "/images/animals/Anoa.jpg",
+        image: "/images/animals/Anoa.jpg",//https://id.wikipedia.org/wiki/Anoa
       },
       {
         name: "Maleo",
         scientificName: "Macrocephalon maleo",
         habitat: "Savanna",
         role: "Seed Disperser",
-        image: "/images/animals/Maleo.jpeg",
+        image: "/images/animals/Maleo.jpeg",//https://id.wikipedia.org/wiki/Maleo_senkawor
       },
       {
         name: "Estuarine Crocodile",
         scientificName: "Crocodylus porosus",
         habitat: "Mangrove Forest",
         role: "Top Predator",
-        image: "/images/animals/Estuarine_Crocodile.jpg",
+        image: "/images/animals/Estuarine_Crocodile.jpg",//https://id.wikipedia.org/wiki/Buaya_muara
       },
     ],
     threats: ["Poaching", "Agricultural expansion", "Forest fires"],
-    image: "/images/forests/Taman_Nasional_Rawa_Aopa_Watumohai.jpg",
+    image: "/images/forests/Taman_Nasional_Rawa_Aopa_Watumohai.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Rawa_Aopa_Watumohai
   },
   {
     id: "komodo",
@@ -734,32 +734,32 @@ export const forests: Forest[] = [
         scientificName: "Varanus komodoensis",
         habitat: "Savanna",
         role: "Top Predator",
-        image: "/images/animals/Komodo_Dragon.jpg",
+        image: "/images/animals/Komodo_Dragon.jpg",//https://id.wikipedia.org/wiki/Komodo
       },
       {
         name: "Timor Rusa Deer",
         scientificName: "Rusa timorensis",
         habitat: "Savanna",
         role: "Grazing Herbivore",
-        image: "/images/animals/Timor_Rusa_Deer.jpg",
+        image: "/images/animals/Timor_Rusa_Deer.jpg",//https://id.wikipedia.org/wiki/Rusa_timor
       },
       {
         name: "Yellow-crested Cockatoo",
         scientificName: "Cacatua sulphurea",
         habitat: "Savanna",
         role: "Seed Disperser",
-        image: "/images/animals/Yellow-crested_Cockatoo.jpg",
+        image: "/images/animals/Yellow-crested_Cockatoo.jpg",//https://id.wikipedia.org/wiki/Kakatua_kecil_jambul-kuning
       },
       {
         name: "Orange-footed Scrubfowl",
         scientificName: "Megapodius reinwardt",
         habitat: "Savanna",
         role: "Seed Disperser",
-        image: "/images/animals/Orange-footed_Scrubfowl.jpg",
+        image: "/images/animals/Orange-footed_Scrubfowl.jpg",//https://id.wikipedia.org/wiki/Gosong_kaki-merah
       },
     ],
     threats: ["Tourism pressure", "Poaching", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Komodo.jpg",
+    image: "/images/forests/Taman_Nasional_Komodo.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Komodo
   },
   {
     id: "kelimutu",
@@ -777,32 +777,32 @@ export const forests: Forest[] = [
         scientificName: "Nisaetus floris",
         habitat: "Montane Forest",
         role: "Top Predator",
-        image: "/images/animals/Flores_Hawk-Eagle.jpg",
+        image: "/images/animals/Flores_Hawk-Eagle.jpg",//https://id.wikipedia.org/wiki/Elang_flores
       },
       {
         name: "Timor Rusa Deer",
         scientificName: "Rusa timorensis",
         habitat: "Montane Forest",
         role: "Grazing Herbivore",
-        image: "/images/animals/Timor_Rusa_Deer.jpg",
+        image: "/images/animals/Timor_Rusa_Deer.jpg",//https://id.wikipedia.org/wiki/Rusa_timor
       },
       {
         name: "Flores Monarch",
         scientificName: "Symposiachrus sacerdotum",
         habitat: "Montane Forest",
         role: "Pest Controller",
-        image: "/images/animals/Flores_Monarch.jpg",
+        image: "/images/animals/Flores_Monarch.jpg",//https://id.wikipedia.org/wiki/Kehicap_flores
       },
       {
         name: "Chestnut-backed Thrush",
         scientificName: "Geokichla dohertyi",
         habitat: "Montane Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Chestnut-backed_Thrush.jpg",
+        image: "/images/animals/Chestnut-backed_Thrush.jpg",//https://id.wikipedia.org/wiki/Anis_nusa_tenggara
       },
     ],
     threats: ["Agricultural expansion", "Habitat loss", "Tourism pressure"],
-    image: "/images/forests/Taman_Nasional_Kelimutu.jpg",
+    image: "/images/forests/Taman_Nasional_Kelimutu.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Kelimutu
   },
   {
     id: "rinjani",
@@ -820,25 +820,25 @@ export const forests: Forest[] = [
         scientificName: "Otus jolandae",
         habitat: "Montane Forest",
         role: "Pest Controller",
-        image: "/images/animals/Rinjani_Scops_Owl.jpg",
+        image: "/images/animals/Rinjani_Scops_Owl.jpg",//https://id.wikipedia.org/wiki/Celepuk_rinjani
       },
       {
         name: "Ebony Leaf Monkey",
         scientificName: "Trachypithecus auratus",
         habitat: "Montane Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Ebony_Leaf_Monkey.jpg",
+        image: "/images/animals/Ebony_Leaf_Monkey.jpg",//https://id.wikipedia.org/wiki/Lutung_budeng
       },
       {
         name: "Timor Rusa Deer",
         scientificName: "Rusa timorensis",
         habitat: "Montane Forest",
         role: "Grazing Herbivore",
-        image: "/images/animals/Timor_Rusa_Deer.jpg",
+        image: "/images/animals/Timor_Rusa_Deer.jpg",//https://id.wikipedia.org/wiki/Rusa_timor
       },
     ],
     threats: ["Tourism pressure", "Illegal logging", "Forest fires"],
-    image: "/images/forests/Taman_Nasional_Gunung_Rinjani.jpg",
+    image: "/images/forests/Taman_Nasional_Gunung_Rinjani.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Gunung_Rinjani
   },
   {
     id: "laiwangi-wanggameti",
@@ -856,25 +856,25 @@ export const forests: Forest[] = [
         scientificName: "Rhyticeros everetti",
         habitat: "Monsoon Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Sumba_Hornbill.jpg",
+        image: "/images/animals/Sumba_Hornbill.jpg",//https://id.wikipedia.org/wiki/Julang_sumba
       },
       {
         name: "Yellow-crested Cockatoo",
         scientificName: "Cacatua sulphurea",
         habitat: "Monsoon Forest",
         role: "Seed Disperser",
-        image: "/images/animals/Yellow-crested_Cockatoo.jpg",
+        image: "/images/animals/Yellow-crested_Cockatoo.jpg",//https://id.wikipedia.org/wiki/Kakatua_kecil_jambul-kuning
       },
       {
         name: "Apricot-breasted Sunbird",
         scientificName: "Cinnyris buettikoferi",
         habitat: "Monsoon Forest",
         role: "Pollinator",
-        image: "/images/animals/Apricot-breasted_Sunbird.jpg",
+        image: "/images/animals/Apricot-breasted_Sunbird.jpg",//https://id.wikipedia.org/wiki/Burung_madu_sumba
       },
     ],
     threats: ["Poaching", "Agricultural expansion", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Laiwangi_Wanggameti.jpg",
+    image: "/images/forests/Taman_Nasional_Laiwangi_Wanggameti.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Laiwangi_Wanggameti
   },
   {
     id: "manusela",
@@ -892,32 +892,32 @@ export const forests: Forest[] = [
         scientificName: "Cacatua moluccensis",
         habitat: "Montane Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Salmon-crested_Cockatoo.jpg",
+        image: "/images/animals/Salmon-crested_Cockatoo.jpg",//https://id.wikipedia.org/wiki/Kakatua_maluku
       },
       {
         name: "Seram Bandicoot",
         scientificName: "Rhynchomeles prattorum",
         habitat: "Montane Rainforest",
         role: "Ecosystem Engineer",
-        image: "/images/animals/Seram_Bandicoot.jpg",
+        image: "/images/animals/Seram_Bandicoot.jpg",//https://id.wikipedia.org/wiki/Mabaya_seram
       },
       {
         name: "Moluccan King Parrot",
         scientificName: "Alisterus amboinensis",
         habitat: "Montane Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Moluccan_King_Parrot.jpg",
+        image: "/images/animals/Moluccan_King_Parrot.jpg",//https://id.wikipedia.org/wiki/Nuri_raja_ambon
       },
       {
         name: "Seram Friarbird",
         scientificName: "Philemon subcorniculatus",
         habitat: "Montane Rainforest",
         role: "Pollinator",
-        image: "/images/animals/Seram_Friarbird.jpeg",
+        image: "/images/animals/Seram_Friarbird.jpeg",//https://id.wikipedia.org/wiki/Cikukua_seram
       },
     ],
     threats: ["Illegal logging", "Poaching", "Habitat loss"],
-    image: "/images/forests/Taman_Nasional_Manusela.jpg",
+    image: "/images/forests/Taman_Nasional_Manusela.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Manusela
   },
   {
     id: "aketajawe-lolobata",
@@ -935,32 +935,32 @@ export const forests: Forest[] = [
         scientificName: "Semioptera wallacii",
         habitat: "Tropical Rainforest",
         role: "Pollinator",
-        image: "/images/animals/Wallace's_Standardwing.jpg",
+        image: "/images/animals/Wallace's_Standardwing.jpg",//https://id.wikipedia.org/wiki/Weka-weka
       },
       {
         name: "Dusky Scrubfowl",
         scientificName: "Megapodius freycinet",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Dusky_Scrubfowl.jpg",
+        image: "/images/animals/Dusky_Scrubfowl.jpg",//https://id.wikipedia.org/wiki/Gosong_kelam
       },
       {
         name: "Halmahera Paradise-crow",
         scientificName: "Lycocorax pyrrhopterus",
         habitat: "Tropical Rainforest",
         role: "Seed Disperser",
-        image: "/images/animals/Halmahera_Paradise-crow.jpg",
+        image: "/images/animals/Halmahera_Paradise-crow.jpg",//https://id.wikipedia.org/wiki/Cenderawasih_gagak_halmahera
       },
       {
         name: "Invisible Rail",
         scientificName: "Habroptila wallacii",
         habitat: "Tropical Rainforest",
         role: "Wetland Forager",
-        image: "/images/animals/Invisible_Rail.jpg",
+        image: "/images/animals/Invisible_Rail.jpg",//https://id.wikipedia.org/wiki/Mandar_gendang
       },
     ],
     threats: ["Mining", "Illegal logging", "Poaching"],
-    image: "/images/forests/Taman_Nasional_Aketajawe_Lolobata.jpg",
+    image: "/images/forests/Taman_Nasional_Aketajawe_Lolobata.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Aketajawe-Lolobata
   },
   {
     id: "wasur",
@@ -978,31 +978,31 @@ export const forests: Forest[] = [
         scientificName: "Macropus agilis",
         habitat: "Savanna",
         role: "Grazing Herbivore",
-        image: "/images/animals/Agile_Wallaby.jpg",
+        image: "/images/animals/Agile_Wallaby.jpg",//https://id.wikipedia.org/wiki/Walabi_saham
       },
       {
         name: "Southern Cassowary",
         scientificName: "Casuarius casuarius",
         habitat: "Savanna",
         role: "Seed Disperser",
-        image: "/images/animals/Southern_Cassowary.jpg",
+        image: "/images/animals/Southern_Cassowary.jpg",//https://id.wikipedia.org/wiki/Kasuari_gelambir_ganda
       },
       {
         name: "Magpie Goose",
         scientificName: "Anseranas semipalmata",
         habitat: "Wetlands",
         role: "Grazing Herbivore",
-        image: "/images/animals/Magpie_Goose.jpg",
+        image: "/images/animals/Magpie_Goose.jpg",//https://id.wikipedia.org/wiki/Soang_cawai
       },
       {
         name: "Brolga",
         scientificName: "Antigone rubicunda",
         habitat: "Wetlands",
         role: "Wetland Forager",
-        image: "/images/animals/Brolga.jpg",
+        image: "/images/animals/Brolga.jpg",//https://en.wikipedia.org/wiki/Brolga
       },
     ],
     threats: ["Poaching", "Invasive species", "Forest fires"],
-    image: "/images/forests/Taman_Nasional_Wasur.jpg",
+    image: "/images/forests/Taman_Nasional_Wasur.jpg",//https://id.wikipedia.org/wiki/Taman_Nasional_Wasur
   },
 ];

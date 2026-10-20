@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Database } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { TrendData } from "@/data/issueDetails";
+import { useLanguage } from "@/lib/i18n";
 
 interface Props {
   eyebrow: string;
@@ -13,6 +14,8 @@ interface Props {
 }
 
 export default function IssueTrend({ eyebrow, heading, intro, trend }: Props) {
+  const { dict } = useLanguage();
+  const text = dict.issues.detail.trend;
   const max = Math.max(1, ...trend.rows.map((r) => r.value ?? 0));
 
   return (
@@ -31,15 +34,15 @@ export default function IssueTrend({ eyebrow, heading, intro, trend }: Props) {
             </p>
             <dl className="mt-6 space-y-2 text-[11px] font-body text-[#F4F0E8]/55">
               <div className="flex gap-2">
-                <dt className="font-semibold uppercase tracking-[0.15em]">Metric:</dt>
+                <dt className="font-semibold uppercase tracking-[0.15em]">{text.metric}</dt>
                 <dd>{trend.metric} ({trend.unit})</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="font-semibold uppercase tracking-[0.15em]">Period:</dt>
+                <dt className="font-semibold uppercase tracking-[0.15em]">{text.period}</dt>
                 <dd>{trend.period}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="font-semibold uppercase tracking-[0.15em]">Scope:</dt>
+                <dt className="font-semibold uppercase tracking-[0.15em]">{text.scope}</dt>
                 <dd>{trend.scope}</dd>
               </div>
             </dl>
@@ -52,11 +55,10 @@ export default function IssueTrend({ eyebrow, heading, intro, trend }: Props) {
               <div className="flex h-full min-h-[220px] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-[rgba(244,240,232,0.2)] bg-black/20 p-8 text-center">
                 <Database size={24} className="text-[#DDEA81]/50" />
                 <p className="font-headline text-base font-bold text-[#F4F0E8]">
-                  Data not yet available
+                  {text.emptyTitle}
                 </p>
                 <p className="max-w-sm text-xs font-body leading-relaxed text-[#F4F0E8]/60">
-                  {trend.note ??
-                    "Verified yearly values will appear here once published by the source below."}
+                  {trend.note ?? text.emptyBody}
                 </p>
               </div>
             ) : (
@@ -88,7 +90,7 @@ export default function IssueTrend({ eyebrow, heading, intro, trend }: Props) {
               </div>
             )}
             <p className="mt-5 text-[10px] font-body leading-relaxed text-[#F4F0E8]/40">
-              Source: {trend.source}
+              {text.source} {trend.source}
               {trend.note && trend.rows.length > 0 && (
                 <span className="mt-1 block">{trend.note}</span>
               )}

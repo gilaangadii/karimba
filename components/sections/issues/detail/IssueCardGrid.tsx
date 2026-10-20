@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AlertTriangle,
   Axe,
@@ -29,6 +31,7 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { IssueCard } from "@/data/issueDetails";
+import { useLanguage } from "@/lib/i18n";
 
 const icons: Record<string, LucideIcon> = {
   sprout: Sprout,
@@ -67,6 +70,9 @@ interface Props {
 }
 
 export default function IssueCardGrid({ eyebrow, heading, intro, cards, dark }: Props) {
+  const { dict } = useLanguage();
+  const text = dict.issues.detail.cards;
+
   return (
     <section className={dark ? "section-padding bg-bg-page relative overflow-hidden" : "section-padding bg-bg-forest relative overflow-hidden"}>
       <div className="mx-auto max-w-[1200px]">
@@ -106,7 +112,7 @@ export default function IssueCardGrid({ eyebrow, heading, intro, cards, dark }: 
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#1E3420] to-[#101A12]">
                         <ImageOff size={20} className="text-[#DDEA81]/35" />
                         <span className="text-[8px] font-body uppercase tracking-[0.25em] text-[#F4F0E8]/35">
-                          Image coming soon
+                          {text.imageComingSoon}
                         </span>
                       </div>
                     )}

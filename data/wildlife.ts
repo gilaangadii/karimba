@@ -7,7 +7,7 @@ export const wildlife: Wildlife[] = [
     scientificName: "Pongo pygmaeus",
     habitat: "Tropical Rainforest",
     role: "Ecosystem Engineer",
-    image: "/images/animals/Orangutan.jpg",
+    image: "/images/animals/Orangutan.jpg",//https://id.wikipedia.org/wiki/Orang_utan
   },
   {
     id: "harimau",
@@ -15,7 +15,7 @@ export const wildlife: Wildlife[] = [
     scientificName: "Panthera tigris sumatrae",
     habitat: "Tropical Rainforest",
     role: "Top Predator",
-    image: "/images/animals/Harimau_Sumatera.jpg",
+    image: "/images/animals/Harimau_Sumatera.jpg",//https://id.wikipedia.org/wiki/Harimau_sumatra
   },
   {
     id: "badak",
@@ -23,7 +23,7 @@ export const wildlife: Wildlife[] = [
     scientificName: "Rhinoceros sondaicus",
     habitat: "Tropical Rainforest",
     role: "Seed Disperser",
-    image: "/images/animals/Badak_Jawa.jpg",
+    image: "/images/animals/Badak_Jawa.jpg",//https://id.wikipedia.org/wiki/Badak_jawa
   },
   {
     id: "bekantan",
@@ -31,7 +31,7 @@ export const wildlife: Wildlife[] = [
     scientificName: "Nasalis larvatus",
     habitat: "Mangrove Forest",
     role: "Seed Disperser",
-    image: "/images/animals/Bekantan.jpeg",
+    image: "/images/animals/Bekantan.jpeg",//https://id.wikipedia.org/wiki/Bekantan
   },
   {
     id: "cenderawasih",
@@ -39,6 +39,6 @@ export const wildlife: Wildlife[] = [
     scientificName: "Paradisaeidae",
     habitat: "Tropical Forest",
     role: "Forest Guardian",
-    image: "/images/animals/Cenderawasih.jpg",
+    image: "/images/animals/Cenderawasih.jpg",//https://id.wikipedia.org/wiki/Cenderawasih
   },
 ];

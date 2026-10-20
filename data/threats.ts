@@ -8,7 +8,7 @@ export const threats: Threat[] = [
       "The large-scale loss of forests due to logging, land conversion, and other human activities.",
     impact:
       "Indonesia loses about 1.04 million hectares of forest per year. Impacts include habitat loss for wildlife, soil erosion, and increased carbon emissions.",
-    image: "/images/issues/Deforestasi.jpg",
+    image: "/images/issues/Deforestasi.jpg",//https://id.wikipedia.org/wiki/Deforestasi
   },
   {
     id: "kebakaran",
@@ -17,7 +17,7 @@ export const threats: Threat[] = [
       "Forest and land fires that occur annually, particularly in peatland areas.",
     impact:
       "Fires generate massive air pollution, damage ecosystems, and release millions of tons of carbon into the atmosphere.",
-    image: "/images/issues/Kebakaran_Hutan.jpg",
+    image: "/images/issues/Kebakaran_Hutan.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
   },
   {
     id: "kehilangan-biodiversitas",
@@ -26,6 +26,6 @@ export const threats: Threat[] = [
       "Species threatened with extinction due to habitat loss and poaching.",
     impact:
       "Many endemic species in Indonesia are on the brink of extinction. The loss of species disrupts the balance of entire ecosystems.",
-    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",
+    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",//https://id.wikipedia.org/wiki/Keanekaragaman_hayati
   },
 ];

@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ParticipationCTA from "@/components/auth/ParticipationCTA";
 import { useAuth } from "@/lib/auth";
+import { useLanguage } from "@/lib/i18n";
 
 /* ============================================================
    DATA STORY → Environmental participation / campaign section
@@ -44,6 +45,7 @@ function useCountUp(target: number, active: boolean, duration = 1200) {
 
 export default function DataStory() {
   const { totalParticipants } = useAuth();
+  const { dict } = useLanguage();
   const counterRef = useRef<HTMLDivElement>(null);
   const counterInView = useInView(counterRef, { once: true, margin: "-60px" });
   const animatedValue = useCountUp(totalParticipants, counterInView);
@@ -65,13 +67,13 @@ export default function DataStory() {
         <AnimatedSection>
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold leading-tight uppercase text-[#F4F0E8]">
-              Our Campaign to Protect the Forest
+              {dict.home.story.title}
             </h2>
             <p className="mt-3 text-sm md:text-base font-body font-medium text-[#F4F0E8]">
-              Every small action can make a difference.
+              {dict.home.story.subtitle}
             </p>
             <p className="mt-1 text-xs md:text-sm font-body text-[#F4F0E8]/70">
-              Explore simple ways to take part in protecting Indonesia&rsquo;s forests.
+              {dict.home.story.intro}
             </p>
           </div>
         </AnimatedSection>
@@ -80,22 +82,23 @@ export default function DataStory() {
         <AnimatedSection delay={0.1}>
           <div className="campaign-card mt-10 md:mt-12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 overflow-hidden">
             <div className="relative min-h-[240px] md:min-h-[320px]">
+              {/* Source: https://id.wikipedia.org/wiki/Pelestarian_alam */}
               <img
                 src="/images/image-action.jpg"
-                alt="Hands planting a young tree seedling"
+                alt={dict.home.story.imageAlt}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
 
             <div className="p-7 md:p-10 flex flex-col justify-center">
               <h3 className="font-headline text-xl md:text-2xl font-bold uppercase leading-snug text-[#F4F0E8]">
-                Grow Something That Matters
+                {dict.home.story.ctaTitle}
               </h3>
               <p className="mt-3 text-sm font-body font-medium text-[#F4F0E8]">
-                Take the first step in giving back to nature.
+                {dict.home.story.ctaSubtitle}
               </p>
               <p className="mt-1 text-xs md:text-sm font-body text-[#F4F0E8]/70 leading-relaxed">
-                Plant a virtual tree and become part of KARIMBA&rsquo;s growing forest.
+                {dict.home.story.ctaText}
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <ParticipationCTA />
@@ -103,7 +106,7 @@ export default function DataStory() {
                   href="/about"
                   className="group inline-flex items-center gap-1.5 text-xs font-body font-medium text-[#F4F0E8]/60 transition-colors hover:text-[#DDEA81]"
                 >
-                  Learn more about the campaign
+                  {dict.home.story.learnMore}
                   <ArrowRight
                     size={12}
                     className="transition-transform group-hover:translate-x-1"
@@ -118,11 +121,10 @@ export default function DataStory() {
         <AnimatedSection delay={0.15}>
           <div className="text-center max-w-3xl mx-auto mt-12 md:mt-16">
             <h3 className="font-headline text-xl md:text-2xl lg:text-3xl font-bold uppercase leading-tight text-[#F4F0E8]">
-              Trees Planted by Karimba Explorers
+              {dict.home.story.treesTitle}
             </h3>
             <p className="mt-3 text-xs md:text-sm font-body text-[#F4F0E8]/70 leading-relaxed">
-              As you can see, our users are awake and actively take part in our global
-              initiative by opening our website and caring for the future.
+              {dict.home.story.treesText}
             </p>
           </div>
         </AnimatedSection>
@@ -132,7 +134,7 @@ export default function DataStory() {
             ref={counterRef}
             className="mt-7 md:mt-8 flex items-center justify-center gap-1.5 max-md:flex-nowrap md:gap-3.5"
             role="status"
-            aria-label={`${totalParticipants} trees planted by Karimba explorers`}
+            aria-label={`${totalParticipants} ${dict.home.story.counterAria}`}
           >
             {digits.map((digit, index) => (
               <div key={index} className="participation-tile">

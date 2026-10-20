@@ -31,7 +31,7 @@ export default function ProfilePage() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/images/forests/Taman_Nasional_Sebangau.jpg')",
+          backgroundImage: "url('/images/forests/Taman_Nasional_Sebangau.jpg')",//https://id.wikipedia.org/wiki/Taman_Nasional_Sebangau
         }}
         role="img"
         aria-label="Aerial view of tropical peat swamp forest"

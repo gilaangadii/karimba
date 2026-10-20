@@ -1,14 +1,20 @@
+"use client";
+
 import ParticipationCTA from "@/components/auth/ParticipationCTA";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useLanguage } from "@/lib/i18n";
 
 export default function AboutCTA() {
+  const { dict } = useLanguage();
+  const text = dict.about.cta;
+
   return (
     <section className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/about/bg-about2.png')" }}
+        style={{ backgroundImage: "url('/images/about/bg-about2.png')" }} //local asset
         role="img"
-        aria-label="Dense green Indonesian rainforest canopy"
+        aria-label={text.backgroundAlt}
       />
       <div className="absolute inset-0 bg-[#0B160F]/55" />
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0B160F]/70" />
@@ -18,13 +24,11 @@ export default function AboutCTA() {
         <AnimatedSection>
           <div className="lg:text-right">
             <h2 className="font-headline text-3xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-4xl lg:text-5xl">
-              A Greener Indonesia Starts With{" "}
-              <span className="text-[#DDEA81]">You</span>
+              {text.titleLead}
+              <span className="text-[#DDEA81]">{text.titleHighlight}</span>
             </h2>
             <p className="mt-4 text-sm font-body leading-relaxed text-[#F4F0E8]/75 md:text-base lg:ml-auto lg:max-w-md">
-              Every visit is a small step, but together we can create a much
-              bigger impact for Indonesia&rsquo;s forests and future
-              generations.
+              {text.body}
             </p>
             <div className="mt-7 lg:flex lg:justify-end">
               <ParticipationCTA />

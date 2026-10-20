@@ -1,22 +1,32 @@
+"use client";
+
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { impactLenses } from "@/data/issues";
+import { useLanguage } from "@/lib/i18n";
+import { translateImpactLens } from "@/lib/translateIssue";
 
 export default function BiggerPicture() {
+  const { dict } = useLanguage();
+  const text = dict.issues.picture;
+  const localizedLenses = impactLenses.map((lens) =>
+    translateImpactLens(dict, lens)
+  );
+
   return (
     <section className="section-padding bg-bg-forest relative overflow-hidden">
       <div className="mx-auto max-w-[1440px]">
         <AnimatedSection>
           <p className="mb-3 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-            Understanding the Bigger Picture
+            {text.eyebrow}
           </p>
           <h2 className="max-w-2xl font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-3xl lg:text-4xl">
-            When the Forest Changes, Life Changes Too
+            {text.title}
           </h2>
           <span aria-hidden="true" className="mt-5 block h-px w-16 bg-[#DDEA81]/70" />
         </AnimatedSection>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 md:mt-12">
-          {impactLenses.map((lens, index) => (
+          {localizedLenses.map((lens, index) => (
             <AnimatedSection key={lens.title} delay={index * 0.08} className="h-full">
               <article className="flex h-full flex-col overflow-hidden rounded-xl border border-[rgba(244,240,232,0.12)] bg-[#122217] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(221,234,129,0.35)]">
                 <div className="relative h-[150px] shrink-0 overflow-hidden">

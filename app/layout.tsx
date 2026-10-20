@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/auth";
+import { LanguageProvider } from "@/lib/i18n";
 
 const playfair = Playfair_Display({
   variable: "--font-headline",
@@ -31,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${playfair.variable} ${manrope.variable}`}>
       <body className="min-h-screen bg-surface text-neutral antialiased">
-        <AuthProvider>{children}</AuthProvider>
+        <LanguageProvider>
+          <AuthProvider>{children}</AuthProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

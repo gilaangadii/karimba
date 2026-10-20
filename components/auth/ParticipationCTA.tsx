@@ -3,18 +3,20 @@
 import { ArrowRight, Check } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth";
+import { useLanguage } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 /* Shared 1 User 1 Tree CTA — derives its state from the centralized
    participation context. Used by Home and About (same source). */
 export default function ParticipationCTA({ className }: { className?: string }) {
   const { user, participated, participate } = useAuth();
+  const { dict } = useLanguage();
   const pathname = usePathname();
 
   if (!user) {
     return (
       <a href={`/login?next=${encodeURIComponent(pathname)}`} className={cn("campaign-cta", className)}>
-        Be Part of the Movement
+        {dict.home.cta.join}
         <ArrowRight size={14} />
       </a>
     );
@@ -29,9 +31,9 @@ export default function ParticipationCTA({ className }: { className?: string }) 
           "campaign-cta cursor-default opacity-80 saturate-50",
           className
         )}
-        aria-label="You have already planted your tree"
+        aria-label={dict.home.cta.plantedAria}
       >
-        Tree Planted
+        {dict.home.cta.planted}
         <Check size={14} />
       </button>
     );
@@ -39,7 +41,7 @@ export default function ParticipationCTA({ className }: { className?: string }) 
 
   return (
     <button type="button" onClick={() => participate()} className={cn("campaign-cta", className)}>
-      Be Part of the Movement
+      {dict.home.cta.join}
       <ArrowRight size={14} />
     </button>
   );

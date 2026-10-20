@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Footer from "@/components/layout/Footer";
+import DetailNavbar from "@/components/layout/DetailNavbar";
 import { forests } from "@/data/forests";
 import { forestDetails } from "@/data/forestDetails";
 import ForestHero from "@/components/sections/explore/detail/ForestHero";
@@ -47,13 +48,14 @@ export default async function ForestDetailPage({
 
   return (
     <div className="min-h-screen bg-bg-page">
+      <DetailNavbar backHref="/explore" context="explore" />
       <main>
         <ForestHero forest={forest} detail={detail} />
-        <ForestProfile detail={detail} />
+        <ForestProfile forestId={forest.id} detail={detail} />
         <ForestGlance forest={forest} detail={detail} />
         <EcosystemLife forest={forest} detail={detail} />
         <ForestThreats forest={forest} detail={detail} />
-        <ForestImportance detail={detail} />
+        <ForestImportance forestId={forest.id} detail={detail} />
         <ForestSources detail={detail} />
         <ForestCTA />
       </main>

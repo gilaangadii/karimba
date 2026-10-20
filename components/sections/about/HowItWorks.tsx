@@ -1,36 +1,22 @@
+"use client";
+
 import { MoveRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-
-const steps = [
-  {
-    number: "01",
-    title: "You Visit & Register Account",
-    description: "When you log in to KARIMBA and register an account, you plant one virtual seed.",
-  },
-  {
-    number: "02",
-    title: "A Seed is Planted",
-    description: "Your registration adds to our growing forest of change.",
-  },
-  {
-    number: "03",
-    title: "The Community Grows",
-    description: "More people mean more seeds and greater impact.",
-  },
-  {
-    number: "04",
-    title: "A Greener Tomorrow",
-    description:
-      "Together, we help build a future where Indonesia's forest can thrive.",
-  },
-];
+import { useLanguage } from "@/lib/i18n";
 
 export default function HowItWorks() {
+  const { dict } = useLanguage();
+  const text = dict.about.howItWorks;
+  const steps = text.steps.map((step, index) => ({
+    number: String(index + 1).padStart(2, "0"),
+    ...step,
+  }));
+
   return (
     <section className="section-padding relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
-        style={{ backgroundImage: "url('/images/about/bg-about2.png')" }}
+        style={{ backgroundImage: "url('/images/about/bg-about2.png')" }} //local asset
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-[#0B160F]/60" aria-hidden="true" />
@@ -40,17 +26,16 @@ export default function HowItWorks() {
           <AnimatedSection>
             <div>
               <p className="mb-3 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-                How It Works
+                {text.eyebrow}
               </p>
               <h2 className="max-w-md font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-3xl lg:text-4xl">
-                From a User to a Growing Forest
+                {text.title}
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <p className="max-w-sm text-xs font-body leading-relaxed text-[#F4F0E8]/60 md:text-right md:text-sm">
-              A simple journey with lasting impact. Every user counts, and
-              together we grow a forest of awareness, knowledge, and action.
+              {text.intro}
             </p>
           </AnimatedSection>
         </div>

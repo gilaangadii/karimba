@@ -1,6 +1,9 @@
+"use client";
+
 import { Leaf } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { FocusItem } from "@/data/issueDetails";
+import { useLanguage } from "@/lib/i18n";
 
 interface Props {
   eyebrow: string;
@@ -21,6 +24,8 @@ export default function IssueFocus({
   source,
   backdropImage,
 }: Props) {
+  const { dict } = useLanguage();
+  const text = dict.issues.detail.focus;
   const max = Math.max(
     1,
     ...items.map((item) => {
@@ -60,7 +65,7 @@ export default function IssueFocus({
                   <Leaf size={14} className="text-[#DDEA81]" />
                 </span>
                 <p className="text-[11px] font-body leading-relaxed text-[#F4F0E8]/70">
-                  <span className="font-semibold text-[#DDEA81]">Note. </span>
+                  <span className="font-semibold text-[#DDEA81]">{text.note}</span>
                   {footerNote}
                 </p>
               </div>

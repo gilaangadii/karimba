@@ -25,7 +25,7 @@ export const issues: Issue[] = [
       "Forest areas are changing rapidly through industrial land conversion, illegal logging, and agricultural encroachment into ancient dipterocarp stands.",
     impact:
       "Large-scale clearing fragments habitats, exposes soils to erosion, and releases long-stored carbon into the atmosphere.",
-    image: "/images/issues/Deforestation.jpg",
+    image: "/images/issues/Deforestation.jpg",//https://id.wikipedia.org/wiki/Deforestasi
   },
   {
     id: "forest-fires",
@@ -36,7 +36,7 @@ export const issues: Issue[] = [
       "Drained peatlands become highly flammable, releasing greenhouse gases and creating regional haze.",
     impact:
       "Recurring fires damage ecosystems, threaten public health across the region, and release massive carbon pulses.",
-    image: "/images/issues/Forest_Fire2.jpg",
+    image: "/images/issues/Forest_Fire2.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
   },
   {
     id: "biodiversity-loss",
@@ -47,7 +47,7 @@ export const issues: Issue[] = [
       "Canopy breaks and habitat fragmentation sever ecological corridors, threatening wildlife populations and ecosystem resilience.",
     impact:
       "Isolated populations of endemic species face extinction as gene pools shrink and ecological roles go unfilled.",
-    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",
+    image: "/images/issues/Kehilangan_Keanekaragaman_Hayati.jpg",//https://id.wikipedia.org/wiki/Keanekaragaman_hayati
   },
   {
     id: "climate-change",
@@ -58,7 +58,7 @@ export const issues: Issue[] = [
       "Rising temperatures, shifting rainfall patterns, and extreme weather are altering forest ecosystems, biodiversity, water systems, and communities.",
     impact:
       "Climate stress weakens forest resilience, disrupts water cycles, and amplifies every other pressure on the landscape.",
-    image: "/images/issues/Climate_change.jpg",
+    image: "/images/issues/Climate_change.jpg",//https://id.wikipedia.org/wiki/Perubahan_iklim
   },
 ];
 
@@ -77,7 +77,7 @@ export const impactLenses: ImpactLens[] = [
     description:
       "Keystone species such as the Sumatran tiger and Bornean orangutan depend on intact forest corridors and ecological balance.",
     label: "Ecosystem Disruption",
-    image: "/images/issues/biodiversity.png",
+    image: "/images/issues/biodiversity.png",//https://id.wikipedia.org/wiki/Keanekaragaman_hayati
   },
   {
     number: "02",
@@ -85,7 +85,7 @@ export const impactLenses: ImpactLens[] = [
     description:
       "Tropical forests regulate climate, store vast carbon reserves, and influence rainfall systems across the region.",
     label: "Global Atmospheric Impact",
-    image: "/images/issues/Climate.jpg",
+    image: "/images/issues/Climate.jpg",//https://id.wikipedia.org/wiki/Perubahan_iklim
   },
   {
     number: "03",
@@ -93,7 +93,7 @@ export const impactLenses: ImpactLens[] = [
     description:
       "Millions of people depend directly or indirectly on forest resources, ecosystem services, and sustainable landscapes.",
     label: "Socio-Cultural Resilience",
-    image: "/images/issues/people.png",
+    image: "/images/issues/people.png",//https://id.wikipedia.org/wiki/Manusia
   },
   {
     number: "04",
@@ -101,6 +101,6 @@ export const impactLenses: ImpactLens[] = [
     description:
       "Forest ecosystems regulate water, soil, habitat, and ecological connectivity across the archipelago.",
     label: "Landscape Connectivity",
-    image: "/images/hero-explore.png",
+    image: "/images/hero-explore.png",//https://id.wikipedia.org/wiki/Hutan_hujan_tropika
   },
 ];

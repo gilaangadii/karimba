@@ -1,18 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useLanguage } from "@/lib/i18n";
 
 /* ============================================================
    Demo campaign metrics — replace with backend data later.
    Each entry renders as: value (+ optional unit) + label.
    ============================================================ */
 const ABOUT_STATS = [
-  { value: 124563, unit: "", label: "Seeds Planted by Users", decimals: 0 },
-  { value: 89.4, unit: "ha", label: "Potential Reforestation Coverage", decimals: 1 },
-  { value: 12870, unit: "", label: "People Join the Movement", decimals: 0 },
-];
+  { key: "seeds", value: 124563, unit: "", decimals: 0 },
+  { key: "coverage", value: 89.4, unit: "ha", decimals: 1 },
+  { key: "people", value: 12870, unit: "", decimals: 0 },
+] as const;
 
 function useCountUp(target: number, active: boolean, duration = 1400) {
   const [value, setValue] = useState(0);
@@ -35,14 +36,23 @@ function StatValue({ value, decimals }: { value: number; decimals: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const animated = useCountUp(value, inView);
-  const formatted =
-    decimals > 0
-      ? animated.toFixed(decimals)
-      : Math.round(animated).toLocaleString("en-US");
+  const { language } = useLanguage();
+  const formatter = useMemo(
+    () =>
+      new Intl.NumberFormat(language === "id" ? "id-ID" : "en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      }),
+    [language, decimals]
+  );
+  const formatted = formatter.format(animated);
   return <span ref={ref}>{formatted}</span>;
 }
 
 export default function CoreIdea() {
+  const { dict } = useLanguage();
+  const text = dict.about.coreIdea;
+
   return (
     <section id="core-idea" className="bg-bg-page relative overflow-hidden">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 lg:grid-cols-2">
@@ -53,10 +63,10 @@ export default function CoreIdea() {
             muted
             playsInline
             preload="metadata"
-            aria-label="A young seed growing from the soil"
+            aria-label={text.videoAria}
             className="absolute inset-0 h-full w-full object-cover"
           >
-            <source src="/images/about/movie.mp4" type="video/mp4" />
+            <source src="/images/about/movie.mp4" type="video/mp4" /> {/* Source: https://id.wikipedia.org/wiki/Hutan */}
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0B160F]/30 lg:bg-gradient-to-r" />
         </div>
@@ -64,16 +74,14 @@ export default function CoreIdea() {
         <div className="flex flex-col justify-center px-6 py-12 md:px-12 md:py-16 lg:py-20">
           <AnimatedSection>
             <p className="mb-3 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-              Our Core Idea
+              {text.eyebrow}
             </p>
             <h2 className="font-headline text-3xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-4xl lg:text-5xl">
-              1 Visit, 1 Seed for a{" "}
-              <span className="italic text-[#DDEA81]">Greener Indonesia</span>
+              {text.titleLead}
+              <span className="italic text-[#DDEA81]">{text.titleHighlight}</span>
             </h2>
             <p className="mt-4 max-w-lg text-sm font-body leading-relaxed text-[#F4F0E8]/70 md:text-base">
-              Every time you visit KARIMBA, we plant one seed in real life.
-              It&rsquo;s a simple action, but together, it represents a growing
-              community that cares about Indonesia&rsquo;s forests.
+              {text.body}
             </p>
           </AnimatedSection>
 
@@ -81,7 +89,7 @@ export default function CoreIdea() {
             <dl className="mt-8 grid grid-cols-3 gap-4 md:gap-6">
               {ABOUT_STATS.map((stat) => (
                 <div
-                  key={stat.label}
+                  key={stat.key}
                   className="border-l border-[rgba(244,240,232,0.2)] pl-3 md:pl-4"
                 >
                   <dd className="font-headline text-2xl max-md:text-xl font-bold text-[#F4F0E8] md:text-4xl">
@@ -93,14 +101,13 @@ export default function CoreIdea() {
                     )}
                   </dd>
                   <dt className="mt-1.5 text-[10px] font-body font-medium leading-snug text-[#F4F0E8]/60 md:text-xs">
-                    {stat.label}
+                    {text.stats[stat.key]}
                   </dt>
                 </div>
               ))}
             </dl>
             <p className="mt-5 text-[10px] font-body text-[#F4F0E8]/40 md:text-[11px]">
-              * Estimated based on a standard tree spacing and average
-              reforestation area per tree.
+              {text.disclaimer}
             </p>
           </AnimatedSection>
         </div>

@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Search, TreePine, X } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { forests } from "@/data/forests";
+import { useLanguage } from "@/lib/i18n";
+import { translateForest } from "@/lib/translate";
 import { cn } from "@/lib/utils";
 
 type Region =
@@ -57,14 +59,14 @@ const forestRegion: Record<string, Exclude<Region, "All Regions">> = {
 
 /* Region map icons from public/images/maps-icon/. */
 const regionIconSrc: Record<Region, string> = {
-  "All Regions": "/images/maps-icon/indonesia.png",
-  Sumatra: "/images/maps-icon/sumatra.png",
-  Java: "/images/maps-icon/jawa.png",
-  Kalimantan: "/images/maps-icon/kalimantan.png",
-  Sulawesi: "/images/maps-icon/sulawesi.png",
-  "Nusa Tenggara": "/images/maps-icon/nusa_tenggara.png",
-  Maluku: "/images/maps-icon/maluku.png",
-  Papua: "/images/maps-icon/papua.png",
+  "All Regions": "/images/maps-icon/indonesia.png",//local asset
+  Sumatra: "/images/maps-icon/sumatra.png",//local asset
+  Java: "/images/maps-icon/jawa.png",//local asset
+  Kalimantan: "/images/maps-icon/kalimantan.png",//local asset
+  Sulawesi: "/images/maps-icon/sulawesi.png",//local asset
+  "Nusa Tenggara": "/images/maps-icon/nusa_tenggara.png",//local asset
+  Maluku: "/images/maps-icon/maluku.png",//local asset
+  Papua: "/images/maps-icon/papua.png",//local asset
 };
 
 function RegionIcon({ region }: { region: Region }) {
@@ -80,15 +82,22 @@ function RegionIcon({ region }: { region: Region }) {
 }
 
 export default function RegionExplorer() {
+  const { dict } = useLanguage();
+  const text = dict.explore.explorer;
   const [region, setRegion] = useState<Region>("All Regions");
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
 
+  const localizedForests = useMemo(
+    () => forests.map((forest) => translateForest(dict, forest)),
+    [dict]
+  );
+
   /* Smart search: match name, location, ecosystem, species, or threats —
      combined with the selected region filter. */
   const normalizedQuery = query.trim().toLowerCase();
-  const visible = forests.filter((f) => {
+  const visible = localizedForests.filter((f) => {
     if (region !== "All Regions" && forestRegion[f.id] !== region) return false;
     if (!normalizedQuery) return true;
     const haystack = [
@@ -105,6 +114,9 @@ export default function RegionExplorer() {
       .split(/\s+/)
       .every((word) => haystack.includes(word));
   });
+
+  const regionLabel =
+    region === "All Regions" ? null : text.regions[region];
 
   /* Reset scroll + indicator when the region or search changes. */
   useEffect(() => {
@@ -136,19 +148,18 @@ export default function RegionExplorer() {
           <AnimatedSection>
             <div>
               <p className="mb-2 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#F4F0E8]/60 md:text-xs">
-                Explore by Region
+                {text.eyebrow}
               </p>
               <h2 className="font-headline text-2xl font-bold uppercase leading-tight md:text-3xl lg:text-4xl">
-                <span className="text-[#F4F0E8]">Find a Forest</span>
+                <span className="text-[#F4F0E8]">{text.titleLead}</span>
                 <br />
-                <span className="text-[#DDEA81]">to Explore</span>
+                <span className="text-[#DDEA81]">{text.titleHighlight}</span>
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <p className="max-w-sm text-xs font-body leading-relaxed text-[#F4F0E8]/60 md:text-right md:text-sm">
-              Each region in Indonesia has its own unique forests, landscapes,
-              and wildlife. Choose a region to discover the forests within it.
+              {text.description}
             </p>
           </AnimatedSection>
         </div>
@@ -172,7 +183,7 @@ export default function RegionExplorer() {
                 >
                   <RegionIcon region={r} />
                   <span className="text-center text-[9px] font-body font-semibold uppercase leading-tight tracking-[0.12em] md:text-[10px]">
-                    {r}
+                    {text.regions[r]}
                   </span>
                 </button>
               );
@@ -192,14 +203,14 @@ export default function RegionExplorer() {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search forests, species, places… e.g. orangutan, Komodo, peat"
-                aria-label="Search forests"
+                placeholder={text.searchPlaceholder}
+                aria-label={text.searchAria}
                 className="w-full bg-transparent text-sm font-body text-[#F4F0E8] placeholder:text-[#F4F0E8]/35 focus:outline-none [&::-webkit-search-cancel-button]:hidden"
               />
               {query && (
                 <button
                   onClick={() => setQuery("")}
-                  aria-label="Clear search"
+                  aria-label={text.clearSearch}
                   className="shrink-0 rounded-full p-1 text-[#F4F0E8]/50 transition-colors hover:text-[#DDEA81]"
                 >
                   <X size={14} />
@@ -208,8 +219,8 @@ export default function RegionExplorer() {
             </div>
             <p className="mt-2 text-center text-[11px] font-body text-[#F4F0E8]/50" role="status">
               {normalizedQuery
-                ? `${visible.length} forest${visible.length === 1 ? "" : "s"} found${region !== "All Regions" ? ` in ${region}` : " across Indonesia"}`
-                : `Showing ${visible.length} extraordinary forests${region !== "All Regions" ? ` in ${region}` : ""}`}
+                ? text.resultSearch(visible.length, regionLabel)
+                : text.resultBrowse(visible.length, regionLabel)}
             </p>
           </div>
         </AnimatedSection>
@@ -219,10 +230,10 @@ export default function RegionExplorer() {
           <AnimatedSection>
             <div>
               <p className="mb-2 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#F4F0E8]/60 md:text-xs">
-                Featured Forest
+                {text.featuredEyebrow}
               </p>
               <h2 className="font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-3xl lg:text-4xl">
-                Extraordinary Forests
+                {text.featuredTitle}
               </h2>
             </div>
           </AnimatedSection>
@@ -231,20 +242,20 @@ export default function RegionExplorer() {
             <div className="mt-8 rounded-xl border border-[rgba(244,240,232,0.12)] bg-[#101A12] p-10 text-center">
               <p className="font-headline text-lg font-bold text-[#F4F0E8]">
                 {normalizedQuery
-                  ? `No forests match "${query.trim()}"`
-                  : "No forests listed for this region yet"}
+                  ? text.emptySearchTitle(query.trim())
+                  : text.emptyRegionTitle}
               </p>
               <p className="mx-auto mt-2 max-w-sm text-xs font-body text-[#F4F0E8]/60">
                 {normalizedQuery
-                  ? "Try another keyword, or clear the search to browse everything."
-                  : "KARIMBA is still growing its archive. Try another region to keep exploring."}
+                  ? text.emptySearchBody
+                  : text.emptyRegionBody}
               </p>
               {normalizedQuery && (
                 <button
                   onClick={() => setQuery("")}
                   className="mt-4 rounded-md border border-[rgba(221,234,129,0.4)] px-4 py-2 text-xs font-body font-semibold uppercase tracking-[0.12em] text-[#DDEA81] transition-colors hover:bg-[rgba(221,234,129,0.1)]"
                 >
-                  Clear search
+                  {text.clearSearch}
                 </button>
               )}
             </div>
@@ -259,7 +270,7 @@ export default function RegionExplorer() {
                   <a
                     key={forest.id}
                     href={`/explore/${forest.id}`}
-                    aria-label={`View details of ${forest.name}`}
+                    aria-label={text.viewDetails(forest.name)}
                     data-card
                     className="group relative block h-[200px] w-[88%] shrink-0 snap-center overflow-hidden rounded-xl border border-[rgba(244,240,232,0.12)] transition-colors focus-visible:outline-2 focus-visible:outline-[#DDEA81] md:h-[240px] md:w-[78%]"
                   >
@@ -303,7 +314,7 @@ export default function RegionExplorer() {
                   <button
                     key={forest.id}
                     onClick={() => goTo(index)}
-                    aria-label={`Go to ${forest.name}`}
+                    aria-label={text.goTo(forest.name)}
                     className={cn(
                       "h-1.5 rounded-full transition-all duration-300",
                       index === activeIndex

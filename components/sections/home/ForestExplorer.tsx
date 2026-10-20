@@ -4,9 +4,12 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, TreePine } from "lucide-react";
 import { forests } from "@/data/forests";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useLanguage } from "@/lib/i18n";
+import { translateForest } from "@/lib/translate";
 
 export default function ForestExplorer() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { dict } = useLanguage();
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -27,14 +30,14 @@ export default function ForestExplorer() {
               <button
                 onClick={() => scroll("left")}
                 className="w-10 h-10 rounded-full border border-neutral/20 flex items-center justify-center text-neutral/60 hover:border-secondary hover:text-secondary transition-all"
-                aria-label="Scroll left"
+                aria-label={dict.home.explorer.scrollLeft}
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={() => scroll("right")}
                 className="w-10 h-10 rounded-full border border-neutral/20 flex items-center justify-center text-neutral/60 hover:border-secondary hover:text-secondary transition-all"
-                aria-label="Scroll right"
+                aria-label={dict.home.explorer.scrollRight}
               >
                 <ChevronRight size={18} />
               </button>
@@ -44,10 +47,11 @@ export default function ForestExplorer() {
           <AnimatedSection>
             <div className="text-left md:text-right">
               <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold text-neutral leading-tight uppercase">
-                GET TO KNOW <span className="text-[#DDEA81]">THE FOREST</span>
+                {dict.home.explorer.titleLead}
+                <span className="text-[#DDEA81]">{dict.home.explorer.titleHighlight}</span>
               </h2>
               <p className="text-xs md:text-sm font-body text-neutral/50 mt-2">
-                Every forest has its own ecosystem, wildlife, and story to tell.
+                {dict.home.explorer.subtitle}
               </p>
             </div>
           </AnimatedSection>
@@ -63,6 +67,7 @@ export default function ForestExplorer() {
               // Unified styling: all explorer cards share the same elegant dark glass treatment.
               // Content (image, name, location, tags, Explore) is untouched — only the card
               // container finish is consistent.
+              const item = translateForest(dict, forest);
               const cardContainerClasses = "flex-none w-[280px] md:w-[320px] snap-start group overflow-hidden transition-all duration-300 forest-card--glass";
               const cardImageContainerClasses = "relative overflow-hidden h-[200px] md:h-[240px]";
               const cardContentClasses = "p-5 relative z-10 bg-transparent";
@@ -80,7 +85,7 @@ export default function ForestExplorer() {
                     {forest.image ? (
                       <img
                         src={forest.image}
-                        alt={forest.name}
+                        alt={item.name}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
@@ -95,24 +100,24 @@ export default function ForestExplorer() {
 
                     <div className="absolute bottom-4 left-4 z-20">
                       <span className={`text-[10px] font-body font-medium tracking-[0.15em] uppercase px-2 py-1 rounded ${tagColorClasses}`}>
-                        {forest.ecosystem}
+                        {item.ecosystem}
                       </span>
                     </div>
                   </div>
 
                   <div className={cardContentClasses}>
                     <h3 className={`font-headline text-lg font-bold mb-1 transition-colors ${titleColorClass}`}>
-                      {forest.name}
+                      {item.name}
                     </h3>
                     <p className={`text-xs font-body mb-3 ${locationColorClass}`}>
-                      {forest.location}
+                      {item.location}
                     </p>
                     <a
                       href={`/explore/${forest.id}`}
-                      aria-label={`Explore ${forest.name}`}
+                      aria-label={`${dict.home.explorer.explore} ${item.name}`}
                       className={`inline-flex items-center gap-1.5 text-xs font-body font-medium transition-colors ${exploreBtnClasses}`}
                     >
-                      Explore
+                      {dict.home.explorer.explore}
                       <ArrowRight
                         size={12}
                         className="group-hover:translate-x-1 transition-transform"

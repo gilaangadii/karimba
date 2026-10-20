@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import { TreePine } from "lucide-react";
 import type { Forest } from "@/types";
 import type { ForestDetail } from "@/data/forestDetails";
+import { islandLabelsId } from "@/data/forestDetails.id";
+import { useLanguage } from "@/lib/i18n";
+import { translateForest } from "@/lib/translate";
+import { translateForestDetail } from "@/lib/translateDetail";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -13,13 +17,25 @@ interface Props {
 }
 
 export default function ForestHero({ forest, detail }: Props) {
+  const { dict, language } = useLanguage();
+  const text = dict.explore.detail.hero;
+  const localizedForest = translateForest(dict, forest);
+  const localizedDetail = translateForestDetail(forest.id, detail, language);
+  const island =
+    language === "id" ? islandLabelsId[detail.island] : detail.island;
+
   const stats = [
-    { label: "Forest Type", value: forest.ecosystem },
-    { label: "Area", value: forest.area },
-    ...(forest.biodiversity[0]
-      ? [{ label: "Key Species", value: forest.biodiversity[0].name }]
+    { label: text.forestType, value: localizedForest.ecosystem },
+    { label: text.area, value: localizedForest.area },
+    ...(localizedForest.biodiversity[0]
+      ? [
+          {
+            label: text.keySpecies,
+            value: localizedForest.biodiversity[0].name,
+          },
+        ]
       : []),
-    ...detail.extraStats,
+    ...localizedDetail.extraStats,
   ].slice(0, 5);
 
   /* Column count follows the actual data — never render empty cells. */
@@ -38,18 +54,18 @@ export default function ForestHero({ forest, detail }: Props) {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${forest.image}')` }}
           role="img"
-          aria-label={forest.name}
+          aria-label={localizedForest.name}
         />
       ) : (
         <div
           className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-[#0B160F] via-[#102419] to-[#0B160F]"
           role="img"
-          aria-label="Forest image coming soon"
+          aria-label={text.imageAlt}
         >
           <div className="flex flex-col items-center gap-3 rounded-xl border border-[rgba(244,240,232,0.12)] px-8 py-6">
             <TreePine size={28} className="text-[#DDEA81]/50" />
             <span className="text-[10px] font-body uppercase tracking-[0.3em] text-[#F4F0E8]/50">
-              Image coming soon
+              {text.imageComingSoon}
             </span>
           </div>
         </div>
@@ -65,7 +81,7 @@ export default function ForestHero({ forest, detail }: Props) {
           className="mb-4 flex items-center gap-2 text-[10px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs"
         >
           <span className="h-px w-6 bg-[#DDEA81]/60" />
-          Indonesia · {detail.island} · {forest.ecosystem}
+          Indonesia · {island} · {localizedForest.ecosystem}
         </motion.p>
 
         <motion.h1
@@ -74,7 +90,7 @@ export default function ForestHero({ forest, detail }: Props) {
           transition={{ duration: 0.9, delay: 0.28, ease }}
           className="max-w-3xl font-headline text-4xl font-bold uppercase leading-[1.05] text-[#F4F0E8] md:text-6xl"
         >
-          {forest.name}
+          {localizedForest.name}
         </motion.h1>
 
         <motion.p
@@ -83,7 +99,8 @@ export default function ForestHero({ forest, detail }: Props) {
           transition={{ duration: 0.8, delay: 0.42, ease }}
           className="mt-3 text-[11px] font-body font-medium uppercase tracking-[0.2em] text-[#F4F0E8]/70 md:text-xs"
         >
-          {forest.location} · {forest.area} · {detail.designation}
+          {localizedForest.location} · {localizedForest.area} ·{" "}
+          {localizedDetail.designation}
         </motion.p>
 
         <motion.p
@@ -92,7 +109,7 @@ export default function ForestHero({ forest, detail }: Props) {
           transition={{ duration: 0.9, delay: 0.55, ease }}
           className="mt-4 max-w-2xl text-sm font-body leading-relaxed text-[#F4F0E8]/80 md:text-base"
         >
-          {forest.description}
+          {localizedForest.description}
         </motion.p>
 
         {/* Quick stats bar */}

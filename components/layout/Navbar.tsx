@@ -5,24 +5,28 @@ import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, LogOut, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth";
+import { useLanguage } from "@/lib/i18n";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 const baseNavLinks = [
-  { key: "home", label: "Home", homeHref: "#home", awayHref: "/" },
-  { key: "explore", label: "Explore", homeHref: "/explore", awayHref: "/explore" },
-  { key: "issues", label: "Issues", homeHref: "/issues", awayHref: "/issues" },
-  { key: "about", label: "About", homeHref: "/about", awayHref: "/about" },
+  { key: "home", homeHref: "#home", awayHref: "/" },
+  { key: "explore", homeHref: "/explore", awayHref: "/explore" },
+  { key: "issues", homeHref: "/issues", awayHref: "/issues" },
+  { key: "about", homeHref: "/about", awayHref: "/about" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { dict } = useLanguage();
   const onHome = pathname === "/";
 
   // On the home page links scroll to anchors; on other pages they route back.
   // EXPLORE always opens the dedicated Explore page.
   const navLinks = baseNavLinks.map((link) => ({
     ...link,
+    label: dict.nav[link.key as keyof typeof dict.nav],
     href: onHome ? link.homeHref : link.awayHref,
   }));
   const activeKey =
@@ -65,7 +69,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 aria-current={link.key === activeKey ? "page" : undefined}
                 className={cn(
@@ -81,14 +85,16 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
             <AuthButtons />
           </div>
 
           <div className="flex lg:hidden items-center gap-3">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-neutral p-2 hover:text-accent transition-colors"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-label={isOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -105,7 +111,7 @@ export default function Navbar() {
         <div className="bg-bg-navbar/95 backdrop-blur-xl border-t border-border-subtle px-6 py-6 space-y-4">
           {navLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.key}
               href={link.href}
               onClick={() => setIsOpen(false)}
               aria-current={link.key === activeKey ? "page" : undefined}
@@ -128,6 +134,7 @@ export default function Navbar() {
 
 function AuthButtons({ mobile = false, onNavigate }: { mobile?: boolean; onNavigate?: () => void }) {
   const { user, logout } = useAuth();
+  const { dict } = useLanguage();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -156,14 +163,14 @@ function AuthButtons({ mobile = false, onNavigate }: { mobile?: boolean; onNavig
           onClick={onNavigate}
           className="text-center text-[11px] font-body font-semibold tracking-[0.1em] uppercase text-neutral/80 border border-neutral/20 px-4 py-2 md:py-2.5 rounded hover:border-neutral/40 hover:bg-neutral/5 transition-all duration-300 w-full"
         >
-          Login
+          {dict.nav.login}
         </a>
         <a
           href="/login?mode=register"
           onClick={onNavigate}
           className="text-center text-[11px] font-body font-bold tracking-[0.1em] uppercase text-primary bg-accent px-4 py-2 md:py-2.5 rounded hover:bg-accent/90 shadow-sm transition-all duration-300 w-full"
         >
-          Register
+          {dict.nav.register}
         </a>
       </div>
     );
@@ -199,7 +206,7 @@ function AuthButtons({ mobile = false, onNavigate }: { mobile?: boolean; onNavig
             className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-xs font-body text-neutral/75 transition-colors hover:bg-white/5 hover:text-accent"
           >
             <UserRound size={13} />
-            My Profile
+            {dict.nav.myProfile}
           </button>
           <button
             role="menuitem"
@@ -212,7 +219,7 @@ function AuthButtons({ mobile = false, onNavigate }: { mobile?: boolean; onNavig
             className="flex w-full items-center gap-2 border-t border-white/10 px-4 py-2.5 text-left text-xs font-body text-neutral/75 transition-colors hover:bg-white/5 hover:text-accent"
           >
             <LogOut size={13} />
-            Logout
+            {dict.nav.logout}
           </button>
         </div>
       )}

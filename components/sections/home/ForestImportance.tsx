@@ -2,8 +2,11 @@
 
 import { Leaf, Droplets, CloudSun, Users } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ForestImportance() {
+  const { dict } = useLanguage();
+
   /* === EDITABLE BACKGROUND OVERLAY ===
    * Controls how dark the forest background image appears.
    * Adjust overlayOpacity: "0.0" = fully transparent, "1.0" = fully dark.
@@ -15,7 +18,7 @@ export default function ForestImportance() {
       <div
         className="relative flex flex-col justify-between py-10 md:py-14"
         style={{
-          backgroundImage: `url('/images/forest-importance.jpg')`,
+          backgroundImage: `url('/images/forest-importance.jpg')`,//local asset
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -42,9 +45,9 @@ export default function ForestImportance() {
            * Change these hex values to customize the two-tone heading.
            */}
           <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] max-w-3xl mx-auto uppercase">
-            <span className="text-[#F4F0E8]">FORESTS ARE MORE </span>
+            <span className="text-[#F4F0E8]">{dict.home.importance.titleLead}</span>
 
-            <span className="text-[#DDEA81]">THAN JUST TREES</span>
+            <span className="text-[#DDEA81]">{dict.home.importance.titleHighlight}</span>
           </h2>
         </AnimatedSection>
 
@@ -52,10 +55,10 @@ export default function ForestImportance() {
         <div className="max-w-[1440px] mx-auto px-6 w-full z-10 mt-8 md:mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {[
-              { title: "LIFE", icon: Leaf, desc: "Home to thousands of species." },
-              { title: "WATER", icon: Droplets, desc: "Protecting rivers and water sources." },
-              { title: "CLIMATE", icon: CloudSun, desc: "Storing carbon and regulating climate." },
-              { title: "PEOPLE", icon: Users, desc: "Supporting livelihoods and communities." }
+              { title: dict.home.importance.items.life.title, icon: Leaf, desc: dict.home.importance.items.life.desc },
+              { title: dict.home.importance.items.water.title, icon: Droplets, desc: dict.home.importance.items.water.desc },
+              { title: dict.home.importance.items.climate.title, icon: CloudSun, desc: dict.home.importance.items.climate.desc },
+              { title: dict.home.importance.items.people.title, icon: Users, desc: dict.home.importance.items.people.desc }
             ].map((item, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <div className="importance-card--square rounded-5xl p-4 md:p-5 border flex flex-col items-center justify-center text-center h-full min-h-[180px] md:min-h-[200px] group transition-all duration-300">

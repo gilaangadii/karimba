@@ -2,18 +2,22 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function ExploreHero() {
+  const { dict } = useLanguage();
+  const text = dict.explore.hero;
+
   return (
     <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-explore.png')" }}
+        style={{ backgroundImage: "url('/images/hero-explore.png')" }} //https://id.wikipedia.org/wiki/Hutan_hujan_tropika
         role="img"
-        aria-label="Misty tropical forest mountains of Indonesia"
+        aria-label={text.backgroundAlt}
       />
       {/* Cinematic overlays: dark + green tint + readability gradient */}
       <div className="absolute inset-0 bg-[#0B160F]/55" />
@@ -27,7 +31,7 @@ export default function ExploreHero() {
           transition={{ duration: 0.9, delay: 0.15, ease }}
           className="mb-5 text-xs font-body font-semibold uppercase tracking-[0.35em] text-[#F4F0E8]/80 md:text-sm"
         >
-          Let's explore Indonesian forests
+          {text.eyebrow}
         </motion.p>
 
         <h1 className="font-headline font-bold uppercase leading-[1.02]">
@@ -37,7 +41,7 @@ export default function ExploreHero() {
             transition={{ duration: 1, delay: 0.3, ease }}
             className="block text-4xl text-[#F4F0E8] md:text-7xl lg:text-8xl"
           >
-            Discover the Forest
+            {text.titleLead}
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 34 }}
@@ -45,7 +49,7 @@ export default function ExploreHero() {
             transition={{ duration: 1, delay: 0.45, ease }}
             className="block text-4xl font-medium normal-case italic text-[#DDEA81] md:text-7xl lg:text-8xl"
           >
-            of Indonesia
+            {text.titleHighlight}
           </motion.span>
         </h1>
 
@@ -55,7 +59,7 @@ export default function ExploreHero() {
           transition={{ duration: 1, delay: 0.7, ease }}
           className="mx-auto mt-6 max-w-xl text-sm font-body text-[#F4F0E8]/75 md:text-base"
         >
-          Explore the ecosystems, wildlife, and stories behind Indonesia&rsquo;s forests.
+          {text.subtitle}
         </motion.p>
       </div>
 
@@ -65,10 +69,10 @@ export default function ExploreHero() {
         transition={{ duration: 1, delay: 1, ease }}
         href="#intro"
         className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
-        aria-label="Scroll to explore"
+        aria-label={text.scroll}
       >
         <span className="text-[10px] font-body uppercase tracking-[0.3em] text-[#F4F0E8]/60">
-          Scroll to explore
+          {text.scroll}
         </span>
         <ArrowDown size={14} className="animate-bounce text-[#F4F0E8]/60" />
       </motion.a>

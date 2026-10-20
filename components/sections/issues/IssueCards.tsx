@@ -1,27 +1,34 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { issues } from "@/data/issues";
+import { useLanguage } from "@/lib/i18n";
+import { translateIssue } from "@/lib/translateIssue";
 import { cn } from "@/lib/utils";
 
 export default function IssueCards() {
+  const { dict } = useLanguage();
+  const text = dict.issues.cards;
+  const localizedIssues = issues.map((issue) => translateIssue(dict, issue));
+
   return (
     <section id="challenges" className="section-padding bg-bg-page relative overflow-hidden">
       <div className="mx-auto max-w-[1440px]">
         <AnimatedSection>
           <p className="mb-3 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-            The Main Challenges
+            {text.eyebrow}
           </p>
           <h2 className="max-w-3xl font-headline text-2xl font-bold uppercase leading-tight text-[#F4F0E8] md:text-3xl lg:text-4xl">
-            Key Issues Facing Indonesia&rsquo;s Forests
+            {text.title}
           </h2>
           <p className="mt-3 max-w-xl text-xs font-body text-[#F4F0E8]/60 md:text-sm">
-            Three systemic pressures altering the integrity of the
-            archipelago&rsquo;s forest canopy.
+            {text.description}
           </p>
         </AnimatedSection>
 
         <div className="mt-10 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-12 md:gap-6">
-          {issues.map((issue, index) => {
+          {localizedIssues.map((issue, index) => {
             const large = index % 2 === 0;
             return (
               <AnimatedSection
@@ -31,7 +38,7 @@ export default function IssueCards() {
               >
                 <a
                   href={`/issues/${issue.id}`}
-                  aria-label={`Learn more about ${issue.title}`}
+                  aria-label={text.learnMoreAria(issue.title)}
                   className="group flex h-full flex-col overflow-hidden rounded-xl border border-[rgba(244,240,232,0.12)] bg-[#122217] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(221,234,129,0.35)] focus-visible:outline-2 focus-visible:outline-[#DDEA81]"
                 >
                   <div className={cn("relative shrink-0 overflow-hidden", large ? "h-[220px] md:h-[280px]" : "h-[220px] md:h-[240px]")}>
@@ -44,7 +51,7 @@ export default function IssueCards() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                     {index === 0 && (
                       <span className="absolute left-4 top-4 z-10 rounded bg-black/50 px-2 py-1 text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-[#DDEA81] backdrop-blur-sm">
-                        Primary Threat
+                        {text.primaryThreat}
                       </span>
                     )}
                   </div>
@@ -65,7 +72,7 @@ export default function IssueCards() {
                       {issue.description}
                     </p>
                     <span className="mt-auto flex items-center gap-1.5 pt-4 text-[11px] font-body font-semibold uppercase tracking-[0.15em] text-[#DDEA81]">
-                      Learn More
+                      {text.learnMore}
                       <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </div>

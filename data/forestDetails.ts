@@ -131,7 +131,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "The Leuser Ecosystem is inscribed as part of the Tropical Rainforest Heritage of Sumatra.",
       },
     ],
-    threatImage: "/images/issues/Deforestation.jpg",
+    threatImage: "/images/issues/Deforestation.jpg",//https://id.wikipedia.org/wiki/Deforestasi
     sources: balai("Gunung Leuser"),
   },
   "kerinci-seblat": {
@@ -190,7 +190,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Kerinci Seblat is inscribed as part of the Tropical Rainforest Heritage of Sumatra.",
       },
     ],
-    threatImage: "/images/issues/Illegal_Logging.jpg",
+    threatImage: "/images/issues/Illegal_Logging.jpg",//https://id.wikipedia.org/wiki/Pembalakan_liar
     sources: balai("Kerinci Seblat"),
   },
   "tanjung-puting": {
@@ -254,7 +254,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Severe drought drives peat and forest fires deep into Central Kalimantan's protected swamps.",
       },
     ],
-    threatImage: "/images/issues/Forest_Fire.jpg",
+    threatImage: "/images/issues/Forest_Fire.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
     sources: balai("Tanjung Puting"),
   },
   sebangau: {
@@ -336,7 +336,7 @@ export const forestDetails: Record<string, ForestDetail> = {
       title: "Subterranean Peat Fire Dynamics",
       note: "Once drained, dried peat acts as fuel that burns meters below the surface, requiring total saturation efforts to extinguish.",
     },
-    threatImage: "/images/issues/Forest_Fire.jpg",
+    threatImage: "/images/issues/Forest_Fire.jpg",//https://id.wikipedia.org/wiki/Kebakaran_hutan_dan_lahan
     sources: balai("Sebangau"),
   },
   lorentz: {
@@ -395,7 +395,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Lorentz is inscribed as Southeast Asia's largest protected area, spanning glaciers to tropical seas.",
       },
     ],
-    threatImage: "/images/issues/Climate_change.jpg",
+    threatImage: "/images/issues/Climate_change.jpg",//https://id.wikipedia.org/wiki/Perubahan_iklim
     sources: balai("Lorentz"),
   },
   "way-kambas": {
@@ -446,7 +446,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Way Kambas"),
   },
   "gunung-leuser": {
@@ -497,7 +497,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Gunung Leuser National Park is inscribed as part of the Tropical Rainforest Heritage of Sumatra.",
       },
     ],
-    threatImage: "/images/issues/Illegal_Logging.jpg",
+    threatImage: "/images/issues/Illegal_Logging.jpg",//https://id.wikipedia.org/wiki/Pembalakan_liar
     sources: balai("Gunung Leuser"),
   },
   "ujung-kulon": {
@@ -561,7 +561,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Ujung Kulon is inscribed for protecting the last viable habitat of the Javan rhino.",
       },
     ],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Ujung Kulon"),
   },
   "bromo-tengger-semeru": {
@@ -620,7 +620,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Months of ash columns close the caldera as Bromo enters one of its periodic eruptive phases.",
       },
     ],
-    threatImage: "/images/issues/Tourism_pressure.jpg",
+    threatImage: "/images/issues/Tourism_pressure.jpg",//https://id.wikipedia.org/wiki/Ekowisata
     sources: balai("Bromo Tengger Semeru"),
   },
   baluran: {
@@ -729,7 +729,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [{ label: "Elevation", value: "Up to 3,019 m" }],
     timeline: [],
-    threatImage: "/images/issues/Tourism_pressure.jpg",
+    threatImage: "/images/issues/Tourism_pressure.jpg",//https://id.wikipedia.org/wiki/Ekowisata
     sources: balai("Gunung Gede Pangrango"),
   },
   "betung-kerihun": {
@@ -780,7 +780,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Illegal_Logging.jpg",
+    threatImage: "/images/issues/Illegal_Logging.jpg",//https://id.wikipedia.org/wiki/Pembalakan_liar
     sources: balai("Betung Kerihun"),
   },
   "kayan-mentarang": {
@@ -831,7 +831,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Illegal_Logging.jpg",
+    threatImage: "/images/issues/Illegal_Logging.jpg",//https://id.wikipedia.org/wiki/Pembalakan_liar
     sources: balai("Kayan Mentarang"),
   },
   "lore-lindu": {
@@ -882,7 +882,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Lore Lindu"),
   },
   "bogani-nani-wartabone": {
@@ -933,7 +933,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Bogani Nani Wartabone"),
   },
   bantimurung: {
@@ -984,7 +984,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Deforestation.jpg",
+    threatImage: "/images/issues/Deforestation.jpg",//https://id.wikipedia.org/wiki/Deforestasi
     sources: balai("Bantimurung-Bulusaraung"),
   },
   "rawa-aopa": {
@@ -1035,7 +1035,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Rawa Aopa Watumohai"),
   },
   komodo: {
@@ -1093,7 +1093,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Komodo is inscribed for the dragon and the exceptional marine and terrestrial life around it.",
       },
     ],
-    threatImage: "/images/issues/Tourism_pressure.jpg",
+    threatImage: "/images/issues/Tourism_pressure.jpg",//https://id.wikipedia.org/wiki/Ekowisata
     sources: balai("Komodo"),
   },
   kelimutu: {
@@ -1144,7 +1144,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Deforestation.jpg",
+    threatImage: "/images/issues/Deforestation.jpg",//https://id.wikipedia.org/wiki/Deforestasi
     sources: balai("Kelimutu"),
   },
   rinjani: {
@@ -1203,7 +1203,7 @@ export const forestDetails: Record<string, ForestDetail> = {
           "Major earthquakes trigger landslides across the volcano, closing trekking routes through a long recovery.",
       },
     ],
-    threatImage: "/images/issues/Tourism_pressure.jpg",
+    threatImage: "/images/issues/Tourism_pressure.jpg",//https://id.wikipedia.org/wiki/Ekowisata
     sources: balai("Gunung Rinjani"),
   },
   "laiwangi-wanggameti": {
@@ -1254,7 +1254,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Laiwangi Wanggameti"),
   },
   manusela: {
@@ -1305,7 +1305,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Illegal_Logging.jpg",
+    threatImage: "/images/issues/Illegal_Logging.jpg",//https://id.wikipedia.org/wiki/Pembalakan_liar
     sources: balai("Manusela"),
   },
   "aketajawe-lolobata": {
@@ -1406,7 +1406,7 @@ export const forestDetails: Record<string, ForestDetail> = {
     ],
     extraStats: [],
     timeline: [],
-    threatImage: "/images/issues/Poaching.jpg",
+    threatImage: "/images/issues/Poaching.jpg",//https://id.wikipedia.org/wiki/Perburuan_ilegal
     sources: balai("Wasur"),
   },
 };

@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import { Forest } from "@/types";
 import { forests } from "@/data/forests";
+import { useLanguage } from "@/lib/i18n";
+import { translateForest } from "@/lib/translate";
 
 // Globe palette — mirrors CSS theme tokens for visual consistency.
 // These hex values are used in Three.js/WebGL contexts where CSS variables are unavailable.
@@ -49,6 +51,17 @@ export default function ForestGlobe({
   const selectedRef = useRef<Forest | null>(null);
   const hoveredRef = useRef<string | null>(null);
   const [hoveredForest, setHoveredForest] = useState<string | null>(null);
+  const { dict } = useLanguage();
+
+  /* Forest labels follow the active language without rebuilding the globe. */
+  const localizedForests = useMemo(
+    () => forests.map((forest) => translateForest(dict, forest)),
+    [dict]
+  );
+  const localizedForestsRef = useRef<Forest[]>(localizedForests);
+  useEffect(() => {
+    localizedForestsRef.current = localizedForests;
+  }, [localizedForests]);
 
   const handleMarkerClick = useCallback(
     (forest: Forest) => {
@@ -164,7 +177,7 @@ export default function ForestGlobe({
       }
 
       // Restrict markers to top 8 forests to keep hero clean
-      const markerData = forests.slice(0, 8);
+      const markerData = localizedForestsRef.current.slice(0, 8);
 
       g.htmlElementsData(markerData)
         .htmlLat("latitude")
@@ -345,6 +358,12 @@ export default function ForestGlobe({
     };
   }, []);
 
+  // Refresh marker tooltips when the language changes
+  useEffect(() => {
+    if (!globeRef.current) return;
+    globeRef.current.htmlElementsData(localizedForests.slice(0, 8));
+  }, [localizedForests]);
+
   // Update HTML elements explicitly on interaction
   useEffect(() => {
     if (!globeRef.current) return;
@@ -412,7 +431,7 @@ export default function ForestGlobe({
 
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 text-xs max-md:text-[10px] font-body text-neutral/40 z-10 pointer-events-none select-none whitespace-nowrap max-w-[calc(100vw-3rem)]">
         <span className="w-1.5 h-1.5 rounded-full bg-accent" style={{ animation: 'karimba-pulse 2s infinite' }} />
-        Drag to rotate · Scroll to zoom
+        {dict.home.globe.hint}
       </div>
     </div>
   );

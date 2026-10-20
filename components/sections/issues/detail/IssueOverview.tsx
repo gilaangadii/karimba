@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Clapperboard } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useLanguage } from "@/lib/i18n";
 
 interface Props {
   heading: string;
@@ -16,6 +17,8 @@ interface Props {
 
 export default function IssueOverview({ heading, body, video, videoSourceUrl, videoSourceLabel, stats, statsSource }: Props) {
   const [videoFailed, setVideoFailed] = useState(false);
+  const { dict } = useLanguage();
+  const text = dict.issues.detail.overview;
 
   return (
     <section id="overview" className="section-padding bg-bg-page relative overflow-hidden">
@@ -23,7 +26,7 @@ export default function IssueOverview({ heading, body, video, videoSourceUrl, vi
         <AnimatedSection>
           <div>
             <p className="mb-2 text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[#DDEA81] md:text-xs">
-              Overview
+              {text.eyebrow}
             </p>
             <h2 className="font-headline text-2xl font-bold leading-tight text-[#F4F0E8] md:text-4xl">
               {heading}
@@ -48,12 +51,12 @@ export default function IssueOverview({ heading, body, video, videoSourceUrl, vi
                 playsInline
                 preload="metadata"
                 onError={() => setVideoFailed(true)}
-                aria-label={`${heading} — explanatory video`}
+                aria-label={text.videoAria(heading)}
                 className="aspect-video w-full rounded-xl border border-[rgba(244,240,232,0.12)] bg-[#101A12] object-cover [color-scheme:dark]"
               />
               {videoSourceUrl && (
                 <p className="mt-2 text-right text-[10px] font-body text-[#F4F0E8]/45">
-                  Video source:{" "}
+                  {text.videoSource}:{" "}
                   <a
                     href={videoSourceUrl}
                     target="_blank"
@@ -70,7 +73,7 @@ export default function IssueOverview({ heading, body, video, videoSourceUrl, vi
             <div className="flex aspect-video w-full flex-col items-center justify-center gap-3 rounded-xl border border-[rgba(244,240,232,0.12)] bg-[#101A12]">
               <Clapperboard size={26} className="text-[#DDEA81]/40" />
               <span className="text-[10px] font-body uppercase tracking-[0.3em] text-[#F4F0E8]/45">
-                {video ? "Video unavailable" : "Video Coming Soon"}
+                {video ? text.videoUnavailable : text.videoComingSoon}
               </span>
             </div>
           )}
